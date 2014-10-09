@@ -1,0 +1,4 @@
+class Fabricante < ActiveRecord::Base
+  self.table_name="Fabricante"
+  
+end
