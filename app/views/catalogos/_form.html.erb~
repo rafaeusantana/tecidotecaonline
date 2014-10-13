@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" style="label{width:500px}">
     <%= f.label :suporte_id %>
     <%= f.select :suporte_id, Suporte.all.map{|c| [c.nome, c.id]} %>
   </div>

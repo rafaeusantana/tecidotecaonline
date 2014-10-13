@@ -25,7 +25,7 @@
         <td><%= catalogo.data_aquisicao %></td>
         <td><%= catalogo.fibra_tecido %></td>
         <td><%= catalogo.codificacao_internacional_tecido %></td>
-        <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
+        <td><%= catalogo.fabricante_id %></td>
         <td><%= link_to 'Show', catalogo %></td>
         <td><%= link_to 'Edit', edit_catalogo_path(catalogo) %></td>
         <td><%= link_to 'Destroy', catalogo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

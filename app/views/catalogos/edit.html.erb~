@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @catalogo %> |
-<%= link_to 'Back', catalogos_path %>
+<%= link_to 'Back', catalogs_path %>

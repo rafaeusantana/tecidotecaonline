@@ -29,5 +29,5 @@
   <%= Fabricante.find(@catalogo.fabricante_id).nome %>
 </p>
 
-<%= link_to 'Edit', edit_catalogo_path(@catalogo) %> |
+<%= link_to 'Edit', edit_idea_path(@catalogo) %> |
 <%= link_to 'Back', catalogos_path %>
