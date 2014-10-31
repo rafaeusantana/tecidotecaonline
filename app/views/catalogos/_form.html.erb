@@ -11,36 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :suporte_id %>
-    <%= f.select :suporte_id, Suporte.all.map{|c| [c.nome, c.id]} %>
+    <%= f.select :suporte_id, Suporte.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
   </div>
-  <div class="field">
-    <%= f.label :localizacao %>
-    <%= f.text_field :localizacao %> *
+  <div class="form-group">
+    <%= f.label :localizacao %> *
+    <%= f.text_field :localizacao, :class=>"form-control input-sm" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :nome_aquisicao %>
-    <%= f.text_field :nome_aquisicao %>
+    <%= f.text_field :nome_aquisicao, :class=>"form-control input-sm" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_aquisicao %>
-    <%= f.text_field :data_aquisicao %>
+    <%= f.date_field :data_aquisicao, :class=>"form-control input-sm" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fibra_tecido %>
-    <%= f.text_field :fibra_tecido %>
+    <%= f.text_field :fibra_tecido, :class=>"form-control input-sm" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :codificacao_internacional_tecido %>
-    <%= f.text_field :codificacao_internacional_tecido %>
+    <%= f.text_field :codificacao_internacional_tecido, :class=>"form-control input-sm" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :fabricante_id %>
-    <%= f.select :fabricante_id, Fabricante.all.map{|c| [c.nome, c.id]} %>
+    <%= f.select :fabricante_id, Fabricante.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=>"btn btn-primary" %>
   </div>
 <% end %>
