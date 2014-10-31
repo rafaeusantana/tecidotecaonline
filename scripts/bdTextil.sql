@@ -1,4 +1,4 @@
-﻿CREATE TABLE Suporte(
+﻿CREATE TABLE suporte(
 id serial primary key,
 nome varchar(50) not null
 );
@@ -18,7 +18,7 @@ ano_colecao date
 );
 
 
-CREATE TABLE Catalogo(
+CREATE TABLE catalogo(
 id serial primary key,
 suporte_id int references suporte,
 localizacao varchar(6) not null,
@@ -36,7 +36,7 @@ nome varchar(100) not null
 );
 
 
-CREATE TABLE Catalogo_Tipo_Material(
+CREATE TABLE catalogo_Tipo_Material(
 catalogo_id int,
 tipo_material_id int,
 PRIMARY KEY(catalogo_id, tipo_material_id)
