@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Suporte:</strong>
+  <%= Suporte.find(@catalogo.suporte_id).nome %>
+</p>
+<p>
+  <strong>Localização:</strong>
+  <%= @catalogo.localizacao %>
+</p>
+<p>
+  <strong>Nome Arquisição:</strong>
+  <%= @catalogo.nome_aquisicao %>
+</p>
+<p>
+  <strong>Data Aquisição:</strong>
+  <%= @catalogo.data_aquisicao %>
+</p>
+<p>
+  <strong>Fibra Tecido:</strong>
+  <%= @catalogo.fibra_tecido %>
+</p>
+<p>
+  <strong>Codificação Internacional Tecido:</strong>
+  <%= @catalogo.codificacao_internacional_tecido %>
+</p>
+<p>
+  <strong>Fabricante:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).nome %>
+</p>
+
+<%= link_to 'Edit', edit_catalogo_path(@catalogo) %> |
+<%= link_to 'Back', catalogos_path %>

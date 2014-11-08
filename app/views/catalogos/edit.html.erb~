@@ -1,6 +1,6 @@
-<h1>Editing idea</h1>
+<h1>Editar Catáloga</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @catalogo %> |
-<%= link_to 'Back', catalogs_path %>
+<%= link_to 'Show', catalogo_path(@catalogo) %> |
+<%= link_to 'Back', catalogos_path %>

@@ -4,7 +4,7 @@ class CatalogosController < ApplicationController
   # GET /catalogos
   # GET /catalogos.json
   def index
-    @catalogos = Catalogo.all
+    @catalogos = Item.all
   end
 
   # GET /catalogos/1
@@ -14,7 +14,7 @@ class CatalogosController < ApplicationController
 
   # GET /catalogos/new
   def new
-    @catalogo = Catalogo.new
+    @catalogo = Item.new
   end
 
   # GET /catalogos/1/edit
@@ -24,11 +24,12 @@ class CatalogosController < ApplicationController
   # POST /catalogos
   # POST /catalogos.json
   def create
-    @catalogo = Catalogo.new(catalogo_params)
+    @catalogo = Item.new(catalogo_params)
+    @catalogo.suporte_id = 1
 
     respond_to do |format|
       if @catalogo.save
-        format.html { redirect_to @catalogo, notice: 'catalogo was successfully created.' }
+        format.html { redirect_to catalogo_path(@catalogo), notice: 'catalogo was successfully created.' }
         format.json { render :show, status: :created, location: @catalogo }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class CatalogosController < ApplicationController
   def update
     respond_to do |format|
       if @catalogo.update(catalogo_params)
-        format.html { redirect_to @catalogo, notice: 'catalogo was successfully updated.' }
+        format.html { redirect_to catalogo_path(@catalogo), notice: 'catalogo was successfully updated.' }
         format.json { render :show, status: :ok, location: @catalogo }
       else
         format.html { render :edit }
@@ -64,11 +65,11 @@ class CatalogosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_catalogo
-      @catalogo = Catalogo.find(params[:id])
+      @catalogo = Item.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalogo_params
-      params.require(:catalogo).permit(:suporte_id, :localizacao, :nome_aquisicao, :data_aquisicao, :fibra_tecido, :codificacao_internacional_tecido, :fabricante_id)
+      params.require(:item).permit(:suporte_id, :localizacao, :nome_aquisicao, :data_aquisicao, :fibra_tecido, :codificacao_internacional_tecido, :fabricante_id)
     end
 end

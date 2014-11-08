@@ -1,4 +1,4 @@
-<h1>Nova Catálogo</h1>
+<h1>Nova Bandeira</h1>
 
 <%= render 'form' %>
 

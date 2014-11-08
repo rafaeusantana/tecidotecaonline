@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Suporte:</strong>
+  <%= Suporte.find(@bandeira.suporte_id).nome %>
+</p>
+<p>
+  <strong>Localização:</strong>
+  <%= @bandeira.localizacao %>
+</p>
+<p>
+  <strong>Nome Arquisição:</strong>
+  <%= @bandeira.nome_aquisicao %>
+</p>
+<p>
+  <strong>Data Aquisição:</strong>
+  <%= @bandeira.data_aquisicao %>
+</p>
+<p>
+  <strong>Fibra Tecido:</strong>
+  <%= @bandeira.fibra_tecido %>
+</p>
+<p>
+  <strong>Codificação Internacional Tecido:</strong>
+  <%= @bandeira.codificacao_internacional_tecido %>
+</p>
+<p>
+  <strong>Fabricante:</strong>
+  <%= Fabricante.find(@bandeira.fabricante_id).nome %>
+</p>
+
+<%= link_to 'Edit', edit_bandeira_path(@bandeira) %> |
+<%= link_to 'Back', bandeiras_path %>

@@ -19,16 +19,16 @@
     <% @catalogos.each do |catalogo| %>
       <tr>
         <td><%= catalogo.id %></td>
-        <td><%= 1 %></td>
+        <td><%= Suporte.find(catalogo.suporte_id).nome %></td>
         <td><%= catalogo.localizacao %></td>
         <td><%= catalogo.nome_aquisicao %></td>
         <td><%= catalogo.data_aquisicao %></td>
         <td><%= catalogo.fibra_tecido %></td>
         <td><%= catalogo.codificacao_internacional_tecido %></td>
         <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
-        <td><%= link_to 'Mostrar', catalogo_path(catalogo) %></td>
-        <td><%= link_to 'Editar', edit_catalogo_path(catalogo) %></td>
-        <td><%= link_to 'Excluir', catalogo_path(catalogo), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= link_to 'Show', catalogo_path(catalogo) %></td>
+        <td><%= link_to 'Edit', edit_catalogo_path(catalogo) %></td>
+        <td><%= link_to 'Destroy', catalogo_path(catalogo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'Adicionar catálogo', new_catalogo_path %>
+<%= link_to 'New catalogo', new_catalogo_path %>
