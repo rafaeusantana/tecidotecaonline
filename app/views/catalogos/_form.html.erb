@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :suporte_id %>
-    <%= f.select :suporte_id, Suporte.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
-  </div>
-  <div class="form-group">
     <%= f.label :localizacao %> *
     <%= f.text_field :localizacao, :class=>"form-control input-sm" %>
   </div>
