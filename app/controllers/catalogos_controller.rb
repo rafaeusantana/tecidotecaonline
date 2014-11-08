@@ -26,7 +26,6 @@ class CatalogosController < ApplicationController
   def create
     @catalogo = Item.new(catalogo_params)
     @catalogo.suporte_id = 1
-
     respond_to do |format|
       if @catalogo.save
         format.html { redirect_to catalogo_path(@catalogo), notice: 'catalogo was successfully created.' }
@@ -70,6 +69,6 @@ class CatalogosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalogo_params
-      params.require(:item).permit(:suporte_id, :localizacao, :nome_aquisicao, :data_aquisicao, :fibra_tecido, :codificacao_internacional_tecido, :fabricante_id)
+      params.require(:item).permit(:localizacao, :nome_aquisicao, :data_aquisicao, :fabricante_id, ligamento_ids: [])
     end
 end

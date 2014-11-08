@@ -17,17 +17,15 @@
   <%= @catalogo.data_aquisicao %>
 </p>
 <p>
-  <strong>Fibra Tecido:</strong>
-  <%= @catalogo.fibra_tecido %>
-</p>
-<p>
-  <strong>Codificação Internacional Tecido:</strong>
-  <%= @catalogo.codificacao_internacional_tecido %>
-</p>
-<p>
   <strong>Fabricante:</strong>
   <%= Fabricante.find(@catalogo.fabricante_id).nome %>
 </p>
+<p>
+  <strong>Ligamentos:</strong>
+  <% @catalogo.ligamentos.each do |i| %>
+  <%= i.tipo %>
+  <% end %>
+</p>
 
-<%= link_to 'Edit', edit_catalogo_path(@catalogo) %> |
-<%= link_to 'Back', catalogos_path %>
+<%= link_to 'Editar', edit_catalogo_path(@catalogo) %> |
+<%= link_to 'Voltar', catalogos_path %>

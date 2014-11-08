@@ -8,8 +8,6 @@
       <th>Localização</th>
       <th>Nome da Aquisição</th>
       <th>Data de Aquisição</th>
-      <th>Fibra do Tecido</th>
-      <th>Codificação Internacional do Tecido</th>
       <th>Fabricante</th>
       <th colspan="8"></th>
     </tr>
@@ -23,8 +21,6 @@
         <td><%= catalogo.localizacao %></td>
         <td><%= catalogo.nome_aquisicao %></td>
         <td><%= catalogo.data_aquisicao %></td>
-        <td><%= catalogo.fibra_tecido %></td>
-        <td><%= catalogo.codificacao_internacional_tecido %></td>
         <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
         <td><%= link_to 'Mostrar', catalogo_path(catalogo) %></td>
         <td><%= link_to 'Editar', edit_catalogo_path(catalogo) %></td>

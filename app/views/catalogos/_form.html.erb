@@ -24,12 +24,8 @@
     <%= f.date_field :data_aquisicao, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
-    <%= f.label :fibra_tecido %>
-    <%= f.text_field :fibra_tecido, :class=>"form-control input-sm" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :codificacao_internacional_tecido %>
-    <%= f.text_field :codificacao_internacional_tecido, :class=>"form-control input-sm" %>
+    <%= f.label :ligamentos %>
+    <%= f.select :ligamento_ids, Ligamento.all.collect {|x| [x.tipo, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
     <%= f.label :fabricante_id %>

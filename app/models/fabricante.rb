@@ -1,4 +1,5 @@
 class Fabricante < ActiveRecord::Base
   self.table_name="fabricante"
-  belongs_to :catalogo
+  has_one :item
+  has_one :colecao
 end
