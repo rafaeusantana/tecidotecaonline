@@ -49,7 +49,7 @@
     <%= f.select :colecao_id, Colecao.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
   </div>
   <div class="form-group">
-    <%= f.label :especificações %>
+    <%= f.label :especificacoes %>
     <%= f.text_field :especificacoes, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
@@ -58,7 +58,7 @@
   </div>
   <div class="form-group">
     <%= f.label :faixa_etarias %>
-    <%= f.select :faixa_etaria_ids, FaixaEtaria.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
+    <%= f.select :faixa_etaria_ids, FaixaEtaria.all.collect {|x| [x.nome, x.id]}, {}, :multiple => false, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
     <%= f.label :peça_vestuário %>

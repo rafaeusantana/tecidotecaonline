@@ -43,6 +43,10 @@
   <%= Fabricante.find(@catalogo.fabricante_id).nome %>
 </p>
 <p>
+  <strong>Coleção:</strong>
+  <%= Colecao.find(@catalogo.colecao_id).nome %>
+</p>
+<p>
   <strong>Especificações:</strong>
   <%= @catalogo.especificacoes %>
 </p>
