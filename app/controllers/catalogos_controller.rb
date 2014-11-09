@@ -28,7 +28,7 @@ class CatalogosController < ApplicationController
     @catalogo.suporte_id = 1
     respond_to do |format|
       if @catalogo.save
-        format.html { redirect_to catalogo_path(@catalogo), notice: 'catalogo was successfully created.' }
+        format.html { redirect_to catalogo_path(@catalogo), notice: 'Catálogo criado com sucesso.' }
         format.json { render :show, status: :created, location: @catalogo }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CatalogosController < ApplicationController
   def update
     respond_to do |format|
       if @catalogo.update(catalogo_params)
-        format.html { redirect_to catalogo_path(@catalogo), notice: 'catalogo was successfully updated.' }
+        format.html { redirect_to catalogo_path(@catalogo), notice: 'Catálogo atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @catalogo }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CatalogosController < ApplicationController
   def destroy
     @catalogo.destroy
     respond_to do |format|
-      format.html { redirect_to catalogos_url, notice: 'catalogo was successfully destroyed.' }
+      format.html { redirect_to catalogos_url, notice: 'Catálogo excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
