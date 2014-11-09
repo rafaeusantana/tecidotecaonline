@@ -17,12 +17,38 @@
   <%= @catalogo.data_aquisicao %>
 </p>
 <p>
-  <strong>Fabricante:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).nome %>
+  <strong>Tamanho (cm):</strong>
+  <%= @catalogo.tamanho_catalogo %>
+</p>
+<p>
+  <strong>Matérias Primas:</strong>
+  <% @catalogo.materia_primas.each do |i| %>
+  <%= i.nome %>
+  <% end %>
 </p>
 <p>
   <strong>Ligamentos:</strong>
   <% @catalogo.ligamentos.each do |i| %>
+  <%= i.tipo %>
+  <% end %>
+</p>
+<p>
+  <strong>Tipos de Materiais:</strong>
+  <% @catalogo.tipo_materials.each do |i| %>
+  <%= i.nome %>
+  <% end %>
+</p>
+<p>
+  <strong>Fabricante:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).nome %>
+</p>
+<p>
+  <strong>Especificações:</strong>
+  <%= @catalogo.especificacoes %>
+</p>
+<p>
+  <strong>Padronagem Design:</strong>
+  <% @catalogo.padronagem_designs.each do |i| %>
   <%= i.tipo %>
   <% end %>
 </p>

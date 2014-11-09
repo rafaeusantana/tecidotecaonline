@@ -24,6 +24,10 @@ nome varchar(50) not null,
 codificacao_internacional_tecido varchar(50)
 );
 
+INSERT INTO materia_prima(id, nome) VALUES(1,'Acetato');
+INSERT INTO materia_prima(id, nome) VALUES(2,'Algodão');
+INSERT INTO materia_prima(id, nome, codificacao_internacional_tecido) VALUES(3,'Acetato','CO');
+
 DROP TABLE IF EXISTS ligamento CASCADE; 
 CREATE TABLE ligamento(
 id serial primary key,
@@ -39,8 +43,8 @@ tipo varchar(50) not null
 DROP TABLE IF EXISTS colecao CASCADE; 
 CREATE TABLE colecao(
 id serial primary key,
-nome_colecao varchar(100) not null,
-ano_colecao date,
+nome varchar(100) not null,
+ano date,
 fabricante_id int references fabricante
 );
 

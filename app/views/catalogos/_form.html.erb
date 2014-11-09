@@ -11,25 +11,58 @@
     </div>
   <% end %>
 
+  <input type="hidden" id="id" name="id" value="<%= @catalogo.try(:id) %>" />
   <div class="form-group">
-    <%= f.label :localizacao %> *
+    <%= f.label :localização %> *
     <%= f.text_field :localizacao, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
-    <%= f.label :nome_aquisicao %>
+    <%= f.label :nome_aquisição %>
     <%= f.text_field :nome_aquisicao, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
-    <%= f.label :data_aquisicao %>
+    <%= f.label :data_aquisição %>
     <%= f.date_field :data_aquisicao, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tamanho %>
+    <%= f.text_field :tamanho_catalogo, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :matérias_primas %>
+    <%= f.select :materia_prima_ids, MateriaPrima.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
     <%= f.label :ligamentos %>
     <%= f.select :ligamento_ids, Ligamento.all.collect {|x| [x.tipo, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
   </div>
   <div class="form-group">
+    <%= f.label :tipos_de_materiais %>
+    <%= f.select :tipo_material_ids, TipoMaterial.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
     <%= f.label :fabricante_id %>
     <%= f.select :fabricante_id, Fabricante.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :coleção_id %>
+    <%= f.select :colecao_id, Colecao.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :especificações %>
+    <%= f.text_field :especificacoes, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :padronagem_design %>
+    <%= f.select :padronagem_design_ids, PadronagemDesign.all.collect {|x| [x.tipo, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :faixa_etarias %>
+    <%= f.select :faixa_etaria_ids, FaixaEtaria.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :peça_vestuário %>
+    <%= f.text_field :peca_vestuario, :class=>"form-control input-sm" %>
   </div>
 
   <div class="actions">
