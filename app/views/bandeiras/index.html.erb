@@ -4,12 +4,9 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Suporte</th>
       <th>Localização</th>
-      <th>Nome da Aquisição</th>
+      <th>Tipo da Aquisição</th>
       <th>Data de Aquisição</th>
-      <th>Fibra do Tecido</th>
-      <th>Codificação Internacional do Tecido</th>
       <th>Fabricante</th>
       <th colspan="8"></th>
     </tr>
@@ -19,16 +16,13 @@
     <% @bandeiras.each do |bandeira| %>
       <tr>
         <td><%= bandeira.id %></td>
-        <td><%= Suporte.find(bandeira.suporte_id).nome %></td>
         <td><%= bandeira.localizacao %></td>
-        <td><%= bandeira.nome_aquisicao %></td>
+        <td><%= bandeira.tipo_aquisicao %></td>
         <td><%= bandeira.data_aquisicao %></td>
-        <td><%= bandeira.fibra_tecido %></td>
-        <td><%= bandeira.codificacao_internacional_tecido %></td>
-        <td><%= Fabricante.find(bandeira.fabricante_id).nome %></td>
-        <td><%= link_to 'Show', bandeira_path(bandeira) %></td>
-        <td><%= link_to 'Edit', edit_bandeira_path(bandeira) %></td>
-        <td><%= link_to 'Destroy', bandeira_path(bandeira), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bandeira.fabricante.nome %></td>
+        <td><%= link_to 'Mostrar', bandeira_path(bandeira) %></td>
+        <td><%= link_to 'Editar', edit_bandeira_path(bandeira) %></td>
+        <td><%= link_to 'Excluir', bandeira_path(bandeira), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New bandeira', new_bandeira_path %>
+<%= link_to 'Adicionar bandeira', new_bandeira_path %>

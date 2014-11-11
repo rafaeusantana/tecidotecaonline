@@ -4,7 +4,8 @@ class CatalogosController < ApplicationController
   # GET /catalogos
   # GET /catalogos.json
   def index
-    @catalogos = Item.all
+	@catalogo = Item.new
+    @catalogos = Item.where("suporte_id=1 "+@catalogo.buildConditions(params))
   end
 
   # GET /catalogos/1
@@ -26,6 +27,7 @@ class CatalogosController < ApplicationController
   def create
     @catalogo = Item.new(catalogo_params)
     @catalogo.suporte_id = 1
+
     respond_to do |format|
       if @catalogo.save
         format.html { redirect_to catalogo_path(@catalogo), notice: 'Catálogo criado com sucesso.' }
@@ -69,6 +71,6 @@ class CatalogosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalogo_params
-      params.require(:item).permit(:localizacao, :nome_aquisicao, :data_aquisicao, :tamanho_catalogo, :fabricante_id, :colecao_id, :especificacoes, :peca_vestuario, ligamento_ids: [], materia_prima_ids: [], tipo_material_ids: [], padronagem_design_ids: [], faixa_etaria_ids: [])
+      params.require(:item).permit(:localizacao, :tipo_aquisicao, :data_aquisicao, :fornecedor_aquisicao, :tamanho_id, :fabricante_id, :colecao_id, :ano_colecao, :especificacoes, :faixa_etaria_id, :peca_vestuario, tipo_material_ids: [])
     end
 end

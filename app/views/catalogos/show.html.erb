@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h3	>DESCRIÇÃO</h3>
 <p>
   <strong>Suporte:</strong>
   <%= Suporte.find(@catalogo.suporte_id).nome %>
@@ -9,28 +9,21 @@
   <%= @catalogo.localizacao %>
 </p>
 <p>
-  <strong>Nome Arquisição:</strong>
-  <%= @catalogo.nome_aquisicao %>
+  <strong>Tipo de Aquisição:</strong>
+  <%= @catalogo.tipo_aquisicao %>
 </p>
 <p>
-  <strong>Data Aquisição:</strong>
+  <strong>Data da Aquisição:</strong>
   <%= @catalogo.data_aquisicao %>
 </p>
 <p>
-  <strong>Tamanho (cm):</strong>
-  <%= @catalogo.tamanho_catalogo %>
+  <strong>Fornecedor da Aquisição:</strong>
+  <%= @catalogo.fornecedor_aquisicao %>
 </p>
+<h3>ESPECIFICAÇÕES TÉCNICAS</h3>
 <p>
-  <strong>Matérias Primas:</strong>
-  <% @catalogo.materia_primas.each do |i| %>
-  <%= i.nome %>
-  <% end %>
-</p>
-<p>
-  <strong>Ligamentos:</strong>
-  <% @catalogo.ligamentos.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
+  <strong>Tamanho:</strong>
+  <%= Tamanho.find(@catalogo.tamanho_id).nome %>
 </p>
 <p>
   <strong>Tipos de Materiais:</strong>
@@ -38,23 +31,42 @@
   <%= i.nome %>
   <% end %>
 </p>
+<h3>INFORMAÇÕES ADICIONAIS</h3>
 <p>
   <strong>Fabricante:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).nome %>
+  <%= Fabricante.find(@catalogo.fabricante_id).nome %><br \>
+  <strong>Cidade:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).cidade %><br \>
+  <strong>Estado:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).estado %><br \>
+  <strong>País:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).pais %><br \>
+  <strong>Endereço:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).endereco %><br \>
+  <strong>Site:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).site %><br \>
+  <strong>E-mail:</strong>
+  <%= Fabricante.find(@catalogo.fabricante_id).email %><br \>
 </p>
 <p>
   <strong>Coleção:</strong>
   <%= Colecao.find(@catalogo.colecao_id).nome %>
 </p>
 <p>
+  <strong>Ano da Coleção:</strong>
+  <%= @catalogo.ano_colecao %>
+</p>
+<p>
   <strong>Especificações:</strong>
   <%= @catalogo.especificacoes %>
 </p>
 <p>
-  <strong>Padronagem Design:</strong>
-  <% @catalogo.padronagem_designs.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
+  <strong>Faixa Etária:</strong>
+  <%= FaixaEtaria.find(@catalogo.faixa_etaria_id).nome %><br \>
+</p>
+<p>
+  <strong>Peça Vestuário:</strong>
+  <%= @catalogo.peca_vestuario %>
 </p>
 
 <%= link_to 'Editar', edit_catalogo_path(@catalogo) %> |

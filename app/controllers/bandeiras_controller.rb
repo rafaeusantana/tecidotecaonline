@@ -4,7 +4,7 @@ class BandeirasController < ApplicationController
   # GET /bandeiras
   # GET /bandeiras.json
   def index
-    @bandeiras = Item.all
+    @bandeiras = Item.where(:suporte_id=>2)
   end
 
   # GET /bandeiras/1
@@ -25,11 +25,11 @@ class BandeirasController < ApplicationController
   # POST /bandeiras.json
   def create
     @bandeira = Item.new(bandeira_params)
-    @bandeira.suporte = 2
+    @bandeira.suporte_id = 2
 
     respond_to do |format|
       if @bandeira.save
-        format.html { redirect_to bandeira_path(@bandeira), notice: 'bandeira was successfully created.' }
+        format.html { redirect_to bandeira_path(@bandeira), notice: 'Bandeira criada com sucesso.' }
         format.json { render :show, status: :created, location: @bandeira }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class BandeirasController < ApplicationController
   def update
     respond_to do |format|
       if @bandeira.update(bandeira_params)
-        format.html { redirect_to bandeira_path(@bandeira), notice: 'bandeira was successfully updated.' }
+        format.html { redirect_to bandeira_path(@bandeira), notice: 'Bandeira atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @bandeira }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class BandeirasController < ApplicationController
   def destroy
     @bandeira.destroy
     respond_to do |format|
-      format.html { redirect_to bandeiras_url, notice: 'bandeira was successfully destroyed.' }
+      format.html { redirect_to bandeiras_url, notice: 'Bandeira excluída com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,7 @@ class BandeirasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bandeira_params
-      params.require(:item).permit(:suporte_id, :localizacao, :nome_aquisicao, :data_aquisicao, :fibra_tecido, :codificacao_internacional_tecido, :fabricante_id)
+      params.require(:item).permit(:tipo_bandeira_id, :localizacao, :tipo_aquisicao, :data_aquisicao, :fornecedor_aquisicao, :gramatura, :numero_trama, :numero_urdume, 
+:fabricante_id, :colecao_id, :ano_colecao, :especificacoes, :cor_id, :analise_cor, :acabamento_id, :textura_id,  materia_prima_ids: [], ligamento_ids: [], fio_titulo_ids: [], padronagem_design_ids: [], uso_tecido_ids: [], cor_adicional_ids: [], tecnica_design_ids: [])
     end
 end
