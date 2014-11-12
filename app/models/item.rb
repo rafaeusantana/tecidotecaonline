@@ -8,6 +8,7 @@ class Item < ActiveRecord::Base
   belongs_to :faixa_etaria
   belongs_to :acabamento
   belongs_to :textura
+  belongs_to :bandeira
   has_many :item_ligamentos
   has_many :ligamentos, :through => :item_ligamentos
   has_many :item_materia_primas

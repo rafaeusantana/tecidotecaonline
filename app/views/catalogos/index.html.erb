@@ -19,7 +19,7 @@
         <td><%= catalogo.id %></td>
         <td><%= Suporte.find(catalogo.suporte_id).nome %></td>
         <td><%= catalogo.localizacao %></td>
-        <td><%= catalogo.nome_aquisicao %></td>
+        <td><%= catalogo.tipo_aquisicao %></td>
         <td><%= catalogo.data_aquisicao %></td>
         <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
         <td><%= link_to 'Mostrar', catalogo_path(catalogo) %></td>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-<h3	>DESCRIÇÃO</h3>
+<h3>DESCRIÇÃO</h3>
 <p>
   <strong>Suporte:</strong>
-  <%= Suporte.find(@bandeira.suporte_id).nome %>
+  <%= @bandeira.suporte.nome %>
 </p>
 <p>
   <strong>Tipo de Bandeira:</strong>
@@ -58,23 +58,23 @@
 <h3>INFORMAÇÕES ADICIONAIS</h3>
 <p>
   <strong>Fabricante:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).nome %><br \>
+  <%= @bandeira.fabricante.nome %><br \>
   <strong>Cidade:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).cidade %><br \>
+  <%= @bandeira.fabricante.cidade %><br \>
   <strong>Estado:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).estado %><br \>
+  <%= @bandeira.fabricante.estado %><br \>
   <strong>País:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).pais %><br \>
+  <%= @bandeira.fabricante.pais %><br \>
   <strong>Endereço:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).endereco %><br \>
+  <%= @bandeira.fabricante.endereco %><br \>
   <strong>Site:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).site %><br \>
+  <%= @bandeira.fabricante.site %><br \>
   <strong>E-mail:</strong>
-  <%= Fabricante.find(@bandeira.fabricante_id).email %><br \>
+  <%= @bandeira.fabricante.email %><br \>
 </p>
 <p>
   <strong>Coleção:</strong>
-  <%= Colecao.find(@bandeira.colecao_id).nome %>
+  <%= @bandeira.colecao.nome %>
 </p>
 <p>
   <strong>Ano da Coleção:</strong>
@@ -98,7 +98,7 @@
 </p>
 <p>
   <strong>Cor predominante:</strong>
-  <%= Cor.find(@bandeira.cor_id).nome %>
+  <%= @bandeira.cor.nome %>
 </p>
 <p>
   <strong>Cores adicionais:</strong>
@@ -114,11 +114,11 @@
 </p>
 <p>
   <strong>Acabamento:</strong>
-  <%= Acabamento.find(@bandeira.acabamento_id).tipo %>
+  <%= @bandeira.acabamento.tipo %>
 </p>
 <p>
   <strong>Textura:</strong>
-  <%= Textura.find(@bandeira.textura_id).tipo %>
+  <%= @bandeira.textura.tipo %>
 </p>
 <p>
   <strong>Análise de Cor:</strong>

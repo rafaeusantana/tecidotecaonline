@@ -2,7 +2,7 @@
 <h3	>DESCRIÇÃO</h3>
 <p>
   <strong>Suporte:</strong>
-  <%= Suporte.find(@catalogo.suporte_id).nome %>
+  <%= @catalogo.suporte.nome %>
 </p>
 <p>
   <strong>Localização:</strong>
@@ -34,23 +34,23 @@
 <h3>INFORMAÇÕES ADICIONAIS</h3>
 <p>
   <strong>Fabricante:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).nome %><br \>
+  <%= @catalogo.fabricante.nome %><br \>
   <strong>Cidade:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).cidade %><br \>
+  <%= @catalogo.fabricante.cidade %><br \>
   <strong>Estado:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).estado %><br \>
+  <%= @catalogo.fabricante.estado %><br \>
   <strong>País:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).pais %><br \>
+  <%= @catalogo.fabricante.pais %><br \>
   <strong>Endereço:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).endereco %><br \>
+  <%= @catalogo.fabricante.endereco %><br \>
   <strong>Site:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).site %><br \>
+  <%= @catalogo.fabricante.site %><br \>
   <strong>E-mail:</strong>
-  <%= Fabricante.find(@catalogo.fabricante_id).email %><br \>
+  <%= @catalogo.fabricante.email %><br \>
 </p>
 <p>
   <strong>Coleção:</strong>
-  <%= Colecao.find(@catalogo.colecao_id).nome %>
+  <%= @catalogo.colecao.nome %>
 </p>
 <p>
   <strong>Ano da Coleção:</strong>
