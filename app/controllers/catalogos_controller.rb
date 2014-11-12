@@ -1,10 +1,11 @@
 class CatalogosController < ApplicationController
   before_action :set_catalogo, only: [:show, :edit, :update, :destroy]
+  before_filter :check_session, :only=>[:new, :edit, :destroy, :update]
 
   # GET /catalogos
   # GET /catalogos.json
   def index
-	@catalogo = Item.new
+    @catalogo = Item.new
     @catalogos = Item.where("suporte_id=1 "+@catalogo.buildConditions(params))
   end
 

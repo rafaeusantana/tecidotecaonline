@@ -1,129 +1,148 @@
-<p id="notice"><%= notice %></p>
-<h3>DESCRIÇÃO</h3>
-<p>
-  <strong>Suporte:</strong>
-  <%= @bandeira.suporte.nome %>
-</p>
-<p>
-  <strong>Tipo de Bandeira:</strong>
-  <%= Bandeira.find(@bandeira.tipo_bandeira_id).tipo %>
-</p>
-<p>
-  <strong>Localização:</strong>
-  <%= @bandeira.localizacao %>
-</p>
-<p>
-  <strong>Tipo de Aquisição:</strong>
-  <%= @bandeira.tipo_aquisicao %>
-</p>
-<p>
-  <strong>Data da Aquisição:</strong>
-  <%= @bandeira.data_aquisicao %>
-</p>
-<p>
-  <strong>Fornecedor da Aquisição:</strong>
-  <%= @bandeira.fornecedor_aquisicao %>
-</p>
-<h3>ESPECIFICAÇÕES TÉCNICAS</h3>
-<p>
-  <strong>Matérias Primas:</strong>
-  <% @bandeira.materia_primas.each do |i| %>
-  <%= i.nome %>
-  <% end %>
-</p>
-<p>
-  <strong>Ligamentos:</strong>
-  <% @bandeira.ligamentos.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
-</p>
-<p>
-  <strong>Gramatura:</strong>
-  <%= @bandeira.gramatura %>
-</p>
-<p>
-  <strong>Número de trama:</strong>
-  <%= @bandeira.numero_trama %>
-</p>
-<p>
-  <strong>Número de urdume:</strong>
-  <%= @bandeira.numero_urdume %>
-</p>
-<p>
-  <strong>Análise de fio-título:</strong>
-  <% @bandeira.fio_titulos.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
-</p>
-<h3>INFORMAÇÕES ADICIONAIS</h3>
-<p>
-  <strong>Fabricante:</strong>
-  <%= @bandeira.fabricante.nome %><br \>
-  <strong>Cidade:</strong>
-  <%= @bandeira.fabricante.cidade %><br \>
-  <strong>Estado:</strong>
-  <%= @bandeira.fabricante.estado %><br \>
-  <strong>País:</strong>
-  <%= @bandeira.fabricante.pais %><br \>
-  <strong>Endereço:</strong>
-  <%= @bandeira.fabricante.endereco %><br \>
-  <strong>Site:</strong>
-  <%= @bandeira.fabricante.site %><br \>
-  <strong>E-mail:</strong>
-  <%= @bandeira.fabricante.email %><br \>
-</p>
-<p>
-  <strong>Coleção:</strong>
-  <%= @bandeira.colecao.nome %>
-</p>
-<p>
-  <strong>Ano da Coleção:</strong>
-  <%= @bandeira.ano_colecao %>
-</p>
-<p>
-  <strong>Especificações:</strong>
-  <%= @bandeira.especificacoes %>
-</p>
-<p>
-  <strong>Padronagem Design:</strong>
-  <% @bandeira.padronagem_designs.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
-</p>
-<p>
-  <strong>Usos do tecido:</strong>
-  <% @bandeira.uso_tecidos.each do |i| %>
-  <%= i.tipo %>
-  <% end %>
-</p>
-<p>
-  <strong>Cor predominante:</strong>
-  <%= @bandeira.cor.nome %>
-</p>
-<p>
-  <strong>Cores adicionais:</strong>
-  <% @bandeira.cor_adicionals.each do |i| %>
-  <%= i.nome %> 
-  <% end %>
-</p>
-<p>
-  <strong>Técnicas de Design:</strong>
-  <% @bandeira.tecnica_designs.each do |i| %>
-  <%= i.nome %>
-  <% end %>
-</p>
-<p>
-  <strong>Acabamento:</strong>
-  <%= @bandeira.acabamento.tipo %>
-</p>
-<p>
-  <strong>Textura:</strong>
-  <%= @bandeira.textura.tipo %>
-</p>
-<p>
-  <strong>Análise de Cor:</strong>
-  <%= @bandeira.analise_cor %>
-</p>
+<h1>Bandeira</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Suporte:</strong>
+	  <%= @bandeira.suporte.nome %>
+	</p>
+	<p>
+	  <strong>Tipo de Bandeira:</strong>
+	  <%= Bandeira.find(@bandeira.tipo_bandeira_id).tipo %>
+	</p>
+	<p>
+	  <strong>Localização:</strong>
+	  <%= @bandeira.localizacao %>
+	</p>
+	<p>
+	  <strong>Tipo de Aquisição:</strong>
+	  <%= @bandeira.tipo_aquisicao %>
+	</p>
+	<p>
+	  <strong>Data da Aquisição:</strong>
+	  <%= @bandeira.data_aquisicao %>
+	</p>
+	<p>
+	  <strong>Fornecedor da Aquisição:</strong>
+	  <%= @bandeira.fornecedor_aquisicao %>
+	</p>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Especificações Técnicas</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Matérias Primas:</strong>
+	  <% @bandeira.materia_primas.each do |i| %>
+	  <%= i.nome %>
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Ligamentos:</strong>
+	  <% @bandeira.ligamentos.each do |i| %>
+	  <%= i.tipo %>
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Gramatura:</strong>
+	  <%= @bandeira.gramatura %>
+	</p>
+	<p>
+	  <strong>Número de trama:</strong>
+	  <%= @bandeira.numero_trama %>
+	</p>
+	<p>
+	  <strong>Número de urdume:</strong>
+	  <%= @bandeira.numero_urdume %>
+	</p>
+	<p>
+	  <strong>Análise de fio-título:</strong>
+	  <% @bandeira.fio_titulos.each do |i| %>
+	  <%= i.tipo %>
+	  <% end %>
+	</p>
+  </div>
+</div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Informações Adicionais</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Fabricante:</strong>
+	  <%= @bandeira.fabricante.nome %><br \>
+	  <strong>Cidade:</strong>
+	  <%= @bandeira.fabricante.cidade %><br \>
+	  <strong>Estado:</strong>
+	  <%= @bandeira.fabricante.estado %><br \>
+	  <strong>País:</strong>
+	  <%= @bandeira.fabricante.pais %><br \>
+	  <strong>Endereço:</strong>
+	  <%= @bandeira.fabricante.endereco %><br \>
+	  <strong>Site:</strong>
+	  <%= @bandeira.fabricante.site %><br \>
+	  <strong>E-mail:</strong>
+	  <%= @bandeira.fabricante.email %><br \>
+	</p>
+	<p>
+	  <strong>Coleção:</strong>
+	  <%= @bandeira.colecao.nome %>
+	</p>
+	<p>
+	  <strong>Ano da Coleção:</strong>
+	  <%= @bandeira.ano_colecao %>
+	</p>
+	<p>
+	  <strong>Especificações:</strong>
+	  <%= @bandeira.especificacoes %>
+	</p>
+	<p>
+	  <strong>Padronagem Design:</strong>
+	  <% @bandeira.padronagem_designs.each do |i| %>
+	  <%= i.tipo %>
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Usos do tecido:</strong>
+	  <% @bandeira.uso_tecidos.each do |i| %>
+	  <%= i.tipo %>
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Cor predominante:</strong>
+	  <%= @bandeira.cor.nome %>
+	</p>
+	<p>
+	  <strong>Cores adicionais:</strong>
+	  <% @bandeira.cor_adicionals.each do |i| %>
+	  <%= i.nome %> 
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Técnicas de Design:</strong>
+	  <% @bandeira.tecnica_designs.each do |i| %>
+	  <%= i.nome %>
+	  <% end %>
+	</p>
+	<p>
+	  <strong>Acabamento:</strong>
+	  <%= @bandeira.acabamento.tipo %>
+	</p>
+	<p>
+	  <strong>Textura:</strong>
+	  <%= @bandeira.textura.tipo %>
+	</p>
+	<p>
+	  <strong>Análise de Cor:</strong>
+	  <%= @bandeira.analise_cor %>
+	</p>
+  </div>
+</div>
 
 <%= link_to 'Editar', edit_bandeira_path(@bandeira) %> |
 <%= link_to 'Voltar', bandeiras_path %>

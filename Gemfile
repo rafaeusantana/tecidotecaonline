@@ -43,3 +43,4 @@ gem "twitter-bootstrap-rails"
 # gem 'debugger', group: [:development, :test]
 
 gem 'pry-byebug'
+gem 'devise'

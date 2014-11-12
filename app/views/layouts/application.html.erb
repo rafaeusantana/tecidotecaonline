@@ -8,9 +8,35 @@
 </head>
 <body>
 
+<div style="background-color:#ccc;width:100%;height:80px;">
+<a href="/home"><img src="/assets/logo.png" width="235px" height="40px" style="margin-left:20px;margin-top:20px"></a>
+</div>
+
+<div style="background-color:#eee;width:100%;font-size:16px;padding:10px;height:40px;border:1px solid #aaa;border-right:none;border-left:none">
+	<div style="float:left;width:50%;">
+		<a href="/home">Página Inicial</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/catalogos">Catálogos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/bandeiras">Bandeiras</a>
+	</div>
+	<div style="float:right;width:auto">
+		<% if user_signed_in? %>
+		  Logged in as <strong><%= current_user.email %></strong>.
+		  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+		  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+		<% else %>
+		  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+		  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+		<% end %>
+	</div>
+</div>
+
+
 <div class="container">
   <%= yield %>
 </div>
 
+<br />
+<br />
+<br />
+<br />
+<br />
 </body>
 </html>

@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :catalogos
   patch '/catalogos' => 'catalogos#update'
   resources :bandeiras
   patch '/bandeiras' => 'bandeiras#update'
+  resources :home
+  root 'home#index'
+#devise_scope :user do
+#  authenticated :user do
+#    root 'home#index', as: :authenticated_root
+#  end
+#  unauthenticated do
+#    root 'devise/sessions#new', as: :unauthenticated_root
+#  end
+#end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

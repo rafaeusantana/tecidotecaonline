@@ -1,5 +1,6 @@
 class BandeirasController < ApplicationController
   before_action :set_bandeira, only: [:show, :edit, :update, :destroy]
+  before_filter :check_session, :only=>[:new, :edit, :destroy, :update]
 
   # GET /bandeiras
   # GET /bandeiras.json
