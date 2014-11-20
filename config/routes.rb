@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   patch '/catalogos' => 'catalogos#update'
   resources :bandeiras
   patch '/bandeiras' => 'bandeiras#update'
+  resources :variados
+  patch '/variados' => 'variados#update'
   resources :home
   root 'home#index'
 #devise_scope :user do
