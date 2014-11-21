@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   patch '/bandeiras' => 'bandeiras#update'
   resources :variados
   patch '/variados' => 'variados#update'
+  resources :suportes
+  patch '/suportes' => 'suportes#update'
   resources :home
   root 'home#index'
 #devise_scope :user do
