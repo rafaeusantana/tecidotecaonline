@@ -24,16 +24,6 @@ ActiveRecord::Schema.define(version: 20141112032116) do
     t.string "tipo", limit: 50, null: false
   end
 
-  create_table "catalogo", force: true do |t|
-    t.integer "suporte_id"
-    t.string  "localizacao",                      limit: 6,   null: false
-    t.string  "nome_aquisicao",                   limit: 50
-    t.date    "data_aquisicao"
-    t.string  "fibra_tecido",                     limit: 100
-    t.string  "codificacao_internacional_tecido", limit: 50
-    t.integer "fabricante_id"
-  end
-
   create_table "catalogo_tipo_material", id: false, force: true do |t|
     t.integer "catalogo_id",      null: false
     t.integer "tipo_material_id", null: false
@@ -86,11 +76,32 @@ ActiveRecord::Schema.define(version: 20141112032116) do
     t.integer "acabamento_id"
     t.integer "textura_id"
     t.string  "analise_cor",          limit: 100
+    t.integer "tipo_item_variado_id"
+  end
+
+  create_table "item_acabamento", id: false, force: true do |t|
+    t.integer "item_id",       null: false
+    t.integer "acabamento_id", null: false
+  end
+
+  create_table "item_cor", id: false, force: true do |t|
+    t.integer "item_id", null: false
+    t.integer "cor_id",  null: false
   end
 
   create_table "item_cor_adicional", id: false, force: true do |t|
     t.integer "item_id",          null: false
     t.integer "cor_adicional_id", null: false
+  end
+
+  create_table "item_cor_predominante", id: false, force: true do |t|
+    t.integer "item_id",             null: false
+    t.integer "cor_predominante_id", null: false
+  end
+
+  create_table "item_faixa_etaria", id: false, force: true do |t|
+    t.integer "item_id",         null: false
+    t.integer "faixa_etaria_id", null: false
   end
 
   create_table "item_fio_titulo", id: false, force: true do |t|
@@ -118,6 +129,11 @@ ActiveRecord::Schema.define(version: 20141112032116) do
     t.integer "tecnica_design_id", null: false
   end
 
+  create_table "item_textura", id: false, force: true do |t|
+    t.integer "item_id",    null: false
+    t.integer "textura_id", null: false
+  end
+
   create_table "item_tipo_material", id: false, force: true do |t|
     t.integer "item_id",          null: false
     t.integer "tipo_material_id", null: false
@@ -126,6 +142,10 @@ ActiveRecord::Schema.define(version: 20141112032116) do
   create_table "item_uso_tecido", id: false, force: true do |t|
     t.integer "item_id",       null: false
     t.integer "uso_tecido_id", null: false
+  end
+
+  create_table "item_variado", force: true do |t|
+    t.string "tipo", limit: 50, null: false
   end
 
   create_table "ligamento", force: true do |t|
@@ -154,6 +174,10 @@ ActiveRecord::Schema.define(version: 20141112032116) do
   end
 
   create_table "textura", force: true do |t|
+    t.string "tipo", limit: 50, null: false
+  end
+
+  create_table "tipo_item", force: true do |t|
     t.string "tipo", limit: 50, null: false
   end
 

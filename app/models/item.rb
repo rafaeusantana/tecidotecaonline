@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
   belongs_to :acabamento
   belongs_to :textura
   belongs_to :bandeira
+  belongs_to :item_variado
   has_many :item_ligamentos
   has_many :ligamentos, :through => :item_ligamentos
   has_many :item_materia_primas

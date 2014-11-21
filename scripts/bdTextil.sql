@@ -6,6 +6,7 @@ nome varchar(50) not null
 
 INSERT INTO suporte(id, nome) VALUES(1,'Catálogo');
 INSERT INTO suporte(id, nome) VALUES(2,'Bandeira');
+INSERT INTO suporte(id, nome) VALUES(3,'Item Variado');
 
 DROP TABLE IF EXISTS bandeira CASCADE; 
 CREATE TABLE bandeira(
@@ -16,6 +17,16 @@ tipo varchar(50) not null
 INSERT INTO bandeira(id, tipo) VALUES(1,'Malharia');
 INSERT INTO bandeira(id, tipo) VALUES(2,'Tecelagem');
 INSERT INTO bandeira(id, tipo) VALUES(3,'Tecnológica');
+
+DROP TABLE IF EXISTS item_variado CASCADE; 
+CREATE TABLE item_variado(
+id serial primary key,
+tipo varchar(50) not null
+);
+
+INSERT INTO item_variado(id, tipo) VALUES(1,'Item1');
+INSERT INTO item_variado(id, tipo) VALUES(2,'Item2');
+INSERT INTO item_variado(id, tipo) VALUES(3,'Item3');
 
 DROP TABLE IF EXISTS materia_prima CASCADE; 
 CREATE TABLE materia_prima(
@@ -678,7 +689,9 @@ numero_urdume int,
 cor_id int references cor,
 acabamento_id int references acabamento,
 textura_id int references textura,
-analise_cor varchar(100)
+analise_cor varchar(100),
+-- exclusivos de itens variados
+tipo_item_variado_id int references item_variado
 );
 
 DROP TABLE IF EXISTS item_materia_prima CASCADE; 

@@ -1,0 +1,33 @@
+<h1>Lista de Itens Variados</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Localização</th>
+      <th>Tipo da Aquisição</th>
+      <th>Data de Aquisição</th>
+      <th>Fabricante</th>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @variados.each do |variado| %>
+      <tr>
+        <td><%= variado.id %></td>
+        <td><%= variado.localizacao %></td>
+        <td><%= variado.tipo_aquisicao %></td>
+        <td><%= variado.data_aquisicao %></td>
+        <td><%= variado.fabricante.nome %></td>
+        <td><%= link_to 'Mostrar', variado_path(variado) %></td>
+        <td><%= link_to 'Editar', edit_variado_path(variado) %></td>
+        <td><%= link_to 'Excluir', variado_path(variado), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar item', new_variado_path %>
