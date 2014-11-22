@@ -1,17 +1,17 @@
-<%= form_for(@suporte, :url => { :controller => "suportes"}) do |f| %>
-  <% if @suporte.errors.any? %>
+<%= form_for(@tipo_suporte, :url => { :controller => "tipo_suportes"}) do |f| %>
+  <% if @tipo_suporte.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@suporte.errors.count, "error") %> prohibited this suporte from being saved:</h2>
+      <h2><%= pluralize(@tipo_suporte.errors.count, "error") %> prohibited this tipo_suporte from being saved:</h2>
 
       <ul>
-      <% @suporte.errors.full_messages.each do |message| %>
+      <% @tipo_suporte.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <input type="hidden" id="id" name="id" value="<%= @suporte.try(:id) %>" />
+  <input type="hidden" id="id" name="id" value="<%= @tipo_suporte.try(:id) %>" />
 
 <div style="width:50%">
 <div class="panel panel-info">

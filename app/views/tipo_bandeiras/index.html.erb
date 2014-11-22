@@ -1,0 +1,24 @@
+<h1>Lista de Tipos de Bandeira</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Bandeira</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_bandeiras.each do |tipo_bandeira| %>
+      <tr>
+        <td><%= tipo_bandeira.tipo %></td>
+        <td><%= link_to 'Mostrar', tipo_bandeira_path(tipo_bandeira) %></td>
+        <td><%= link_to 'Editar', edit_tipo_bandeira_path(tipo_bandeira) %></td>
+        <td><%= link_to 'Excluir', tipo_bandeira_path(tipo_bandeira), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar tipo de bandeira', new_tipo_bandeira_path %>

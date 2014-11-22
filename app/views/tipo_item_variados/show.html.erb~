@@ -1,4 +1,4 @@
-<h1>Suporte</h1>
+<h1>Item</h1>
 
 <div class="panel panel-info">
   <div class="panel-heading">
@@ -7,10 +7,10 @@
   <div class="panel-body">
 	<p>
 	  <strong>Suporte:</strong>
-	  <%= @suporte.nome %>
+	  <%= @tipo_item_variado.tipo %>
 	</p>
   </div>
 </div>
 
-<%= link_to 'Editar', edit_suporte_path(@suporte) %> |
-<%= link_to 'Voltar', suportes_path %>
+<%= link_to 'Editar', edit_tipo_item_variado_path(@tipo_item_variado) %> |
+<%= link_to 'Voltar', tipo_item_variados_path %>

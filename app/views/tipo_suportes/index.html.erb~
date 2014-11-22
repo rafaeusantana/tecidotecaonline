@@ -1,0 +1,24 @@
+<h1>Lista de Tipos de Suportes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Suporte</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_suportes.each do |tipo_suporte| %>
+      <tr>
+        <td><%= tipo_suporte.nome %></td>
+        <td><%= link_to 'Mostrar', tipo_suporte_path(tipo_suporte) %></td>
+        <td><%= link_to 'Editar', edit_tipo_suporte_path(tipo_suporte) %></td>
+        <td><%= link_to 'Excluir', tipo_suporte_path(tipo_suporte), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar suporte', new_tipo_suporte_path %>

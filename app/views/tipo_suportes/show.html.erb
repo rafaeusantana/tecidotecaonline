@@ -1,0 +1,16 @@
+<h1>Suporte</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Tipo:</strong>
+	  <%= @tipo_suporte.nome %>
+	</p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_tipo_suporte_path(@tipo_suporte) %> |
+<%= link_to 'Voltar', tipo_suportes_path %>
