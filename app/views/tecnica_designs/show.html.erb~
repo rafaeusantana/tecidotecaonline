@@ -1,0 +1,16 @@
+<h1>Tecnica Design</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Tipo:</strong>
+	  <%= @tipo_tecnica_design.tipo %>
+	</p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_tipo_tecnica_design_path(@tipo_tecnica_design) %> |
+<%= link_to 'Voltar', tipo_tecnica_designs_path %>

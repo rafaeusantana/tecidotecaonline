@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Padronagem Design</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', padronagem_design_path(@padronagem_design) %> |
+<%= link_to 'Voltar', padronagem_designs_path %>

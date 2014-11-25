@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Fabricante</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', tipo_fabricante_path(@tipo_fabricante) %> |
+<%= link_to 'Voltar', tipo_fabricantes_path %>

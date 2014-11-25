@@ -1,0 +1,24 @@
+<h1>Lista de Materia Prima</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Materia Prima</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materia_primas.each do |materia_prima| %>
+      <tr>
+        <td><%= materia_prima.nome %></td>
+        <td><%= link_to 'Mostrar', materia_prima_path(materia_prima) %></td>
+        <td><%= link_to 'Editar', edit_materia_prima_path(materia_prima) %></td>
+        <td><%= link_to 'Excluir', materia_prima_path(materia_prima), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar matéria prima', new_materia_prima_path %>

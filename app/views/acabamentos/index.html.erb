@@ -1,0 +1,24 @@
+<h1>Lista de Acabamentos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Acabamento</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acabamentos.each do |acabamento| %>
+      <tr>
+        <td><%= acabamento.tipo %></td>
+        <td><%= link_to 'Mostrar', acabamento_path(acabamento) %></td>
+        <td><%= link_to 'Editar', edit_acabamento_path(acabamento) %></td>
+        <td><%= link_to 'Excluir', acabamento_path(acabamento), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar acabamento', new_acabamento_path %>

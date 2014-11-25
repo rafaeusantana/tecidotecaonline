@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Material</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', tipo_material_path(@tipo_material) %> |
+<%= link_to 'Voltar', tipo_materials_path %>

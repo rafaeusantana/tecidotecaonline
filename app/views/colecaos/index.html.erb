@@ -1,0 +1,24 @@
+<h1>Lista de Coleções</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Colecao</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colecaos.each do |colecao| %>
+      <tr>
+        <td><%= colecao.nome %></td>
+        <td><%= link_to 'Mostrar', colecao_path(colecao) %></td>
+        <td><%= link_to 'Editar', edit_colecao_path(colecao) %></td>
+		<td><%= link_to 'Excluir', colecao_path(colecao), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar coleção', new_colecao_path %>

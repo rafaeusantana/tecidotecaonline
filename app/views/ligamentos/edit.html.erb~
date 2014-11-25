@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Ligamento</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', tipo_ligamento_path(@tipo_ligamento) %> |
+<%= link_to 'Voltar', tipo_ligamentos_path %>

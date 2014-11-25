@@ -1,0 +1,32 @@
+<%= form_for(@tipo_material, :url => { :controller => "tipo_materials"}) do |f| %>
+  <% if @tipo_material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_material.errors.count, "error") %> prohibited this tipo_material from being saved:</h2>
+
+      <ul>
+      <% @tipo_material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <input type="hidden" id="id" name="id" value="<%= @tipo_material.try(:id) %>" />
+
+<div style="width:50%">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	  <div class="form-group">
+	    <%= f.label :nome %> *
+	    <%= f.text_field :tipo, :class=>"form-control input-sm" %>
+	  </div>
+  </div>
+</div>
+</div>
+  <div class="actions">
+    <%= f.submit :class=>"btn btn-primary", :value=>"Inserir" %>
+  </div>
+<% end %>

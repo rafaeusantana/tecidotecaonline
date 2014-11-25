@@ -1,0 +1,24 @@
+<h1>Lista de Cores</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Cor</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cors.each do |cor| %>
+      <tr>
+        <td><%= cor.nome %></td>
+        <td><%= link_to 'Mostrar', cor_path(cor) %></td>
+        <td><%= link_to 'Editar', edit_cor_path(cor) %></td>
+        <td><%= link_to 'Excluir', cor_path(cor), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar tipo de cor', new_cor_path %>

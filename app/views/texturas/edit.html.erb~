@@ -1,0 +1,7 @@
+<h1>Editar Textura</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', tipo_textura_path(@tipo_textura) %> |
+<%= link_to 'Voltar', tipo_texturas_path %>

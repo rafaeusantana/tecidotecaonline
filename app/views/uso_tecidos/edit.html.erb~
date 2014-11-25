@@ -1,0 +1,7 @@
+<h1>Editar Uso do Tecido</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', uso_tecido_path(@uso_tecido) %> |
+<%= link_to 'Voltar', uso_tecidos_path %>

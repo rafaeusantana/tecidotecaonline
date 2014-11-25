@@ -1,0 +1,24 @@
+<h1>Lista de Ligamentos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Ligamento</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ligamentos.each do |ligamento| %>
+      <tr>
+        <td><%= ligamento.tipo %></td>
+        <td><%= link_to 'Mostrar', ligamento_path(ligamento) %></td>
+        <td><%= link_to 'Editar', edit_ligamento_path(ligamento) %></td>
+        <td><%= link_to 'Excluir', ligamento_path(ligamento), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar ligamento', new_ligamento_path %>

@@ -1,0 +1,7 @@
+<h1>Editar Matéria Prima</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', materia_prima_path(@materia_prima) %> |
+<%= link_to 'Voltar', materia_primas_path %>

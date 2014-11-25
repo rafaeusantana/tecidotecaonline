@@ -1,0 +1,16 @@
+<h1>Faixa Etária</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Nome:</strong>
+	  <%= @faixa_etaria.nome %>
+	</p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_faixa_etaria_path(@faixa_etaria) %> |
+<%= link_to 'Voltar', faixa_etarias_path %>

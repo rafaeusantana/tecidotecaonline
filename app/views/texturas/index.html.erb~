@@ -1,0 +1,24 @@
+<h1>Lista de Textura</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Tipo de Textura</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @texturas.each do |textura| %>
+      <tr>
+        <td><%= textura.tipo %></td>
+        <td><%= link_to 'Mostrar', textura_path(textura) %></td>
+        <td><%= link_to 'Editar', edit_textura_path(textura) %></td>
+        <td><%= link_to 'Excluir', textura_path(textura), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar textura', new_textura_path %>

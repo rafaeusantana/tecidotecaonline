@@ -1,0 +1,16 @@
+<h1>Acabamento</h1>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Descrição</h3>
+  </div>
+  <div class="panel-body">
+	<p>
+	  <strong>Tipo:</strong>
+	  <%= @tipo_acabamento.tipo %>
+	</p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_tipo_acabamento_path(@tipo_acabamento) %> |
+<%= link_to 'Voltar', tipo_acabamentos_path %>

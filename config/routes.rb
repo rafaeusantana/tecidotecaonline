@@ -10,10 +10,36 @@ Rails.application.routes.draw do
   patch '/tipo_suportes' => 'tipo_suportes#update'
   resources :tipo_bandeiras
   patch '/tipo_bandeiras' => 'tipo_bandeiras#update'
+  resources :ligamentos
   resources :tipo_item_variados
   patch '/tipo_item_variados' => 'tipo_item_variados#update'
+  patch '/ligamentos' => 'ligamentos#update'
+  resources :fabricantes
+  patch '/fabricantes' => 'fabricantes#update'
+  resources :cors
+  patch '/cors' => 'cors#update'
+  resources :padronagem_designs
+  patch '/padronagem_designs' => 'padronagem_designs#update'
+  resources :tipo_materials
+  patch '/tipo_materials' => 'tipo_materials#update'
+  resources :faixa_etarias
+  patch '/faixa_etarias' => 'faixa_etarias#update'
+  resources :uso_tecidos
+  patch '/uso_tecidos' => 'uso_tecidos#update'
+  resources :tecnica_designs
+  patch '/tecnica_designs' => 'tecnica_designs#update'
+  resources :acabamentos
+  patch '/acabamentos' => 'acabamentos#update'
+  resources :texturas
+  patch '/texturas' => 'texturas#update'
+  resources :colecaos
+  patch '/colecaos' => 'colecaos#update'
+  resources :materia_primas
+  patch '/materia_primas' => 'materia_primas#update'
   resources :tamanhos
   patch '/tamanhos' => 'tamanhos#update'
+  resources :fio_titulos
+  patch '/fio_titulos' => 'fio_titulos#update'
   resources :home
   root 'home#index'
 #devise_scope :user do

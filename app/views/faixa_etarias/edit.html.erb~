@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Faixa Etaria</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', faixa_etaria_path(@faixa_etaria) %> |
+<%= link_to 'Voltar', faixa_etarias_path %>

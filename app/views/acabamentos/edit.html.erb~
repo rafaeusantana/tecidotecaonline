@@ -1,0 +1,7 @@
+<h1>Editar Acabamento</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', acabamento_path(@tipo_acabamento) %> |
+<%= link_to 'Voltar', acabamentos_path %>

@@ -1,0 +1,7 @@
+<h1>Editar Tipo de Cor</h1>
+
+<%= render 'form' %>
+
+<br />
+<%= link_to 'Mostrar', cor_path(@cor) %> |
+<%= link_to 'Voltar', cors_path %>
