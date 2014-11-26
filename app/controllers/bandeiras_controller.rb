@@ -5,7 +5,18 @@ class BandeirasController < ApplicationController
   # GET /bandeiras
   # GET /bandeiras.json
   def index
-    @bandeiras = Item.where(:suporte_id=>2)
+	cond = Item.buildConditions(params)
+	if !params[:item].nil? && !params[:item][:materia_prima_ids].nil? && params[:item][:materia_prima_ids].count>1
+      @bandeiras = Item.joins(:item_materia_primas).where("suporte_id=2 " + cond).group(:id)
+    else
+      @bandeiras = Item.where("suporte_id=2 " + cond)
+	end
+
+	if params[:item].nil?
+		@bandeira = Item.new
+	else
+		@bandeira = Item.new(bandeira_params)
+	end	
   end
 
   # GET /bandeiras/1

@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   patch '/tipo_suportes' => 'tipo_suportes#update'
   resources :tipo_bandeiras
   patch '/tipo_bandeiras' => 'tipo_bandeiras#update'
-  resources :ligamentos
   resources :tipo_item_variados
   patch '/tipo_item_variados' => 'tipo_item_variados#update'
+  resources :ligamentos
   patch '/ligamentos' => 'ligamentos#update'
   resources :fabricantes
   patch '/fabricantes' => 'fabricantes#update'
@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   patch '/tamanhos' => 'tamanhos#update'
   resources :fio_titulos
   patch '/fio_titulos' => 'fio_titulos#update'
+  resources :edicao_campos
+  patch '/edicao_campos' => 'edicao_campos#update'
   resources :home
   root 'home#index'
 #devise_scope :user do

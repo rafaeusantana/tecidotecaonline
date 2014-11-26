@@ -29,7 +29,7 @@ class LigamentosController < ApplicationController
 
     respond_to do |format|
       if @ligamento.save
-        format.html { redirect_to ligamento_path(@ligamento), notice: 'Ligamento criada com sucesso.' }
+        format.html { redirect_to ligamento_path(@ligamento), notice: 'Ligamento criado com sucesso.' }
         format.json { render :show, status: :created, location: @ligamento }
       else
         format.html { render :new }

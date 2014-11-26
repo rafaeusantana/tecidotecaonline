@@ -134,6 +134,6 @@
 </div>
 </div>
   <div class="actions">
-    <%= f.submit :class=>"btn btn-primary", :value=>"Atualizar" %>
+    <%= f.submit :class=>"btn btn-primary", :value=>(@bandeira.id.nil?) ? "Adicionar" : "Atualizar" %>
   </div>
 <% end %>

@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+<h3	>DESCRIÇÃO</h3>
+<p>
+  <strong>Suporte:</strong>
+  <%= @catalogo.suporte.nome %>
+</p>
+<p>
+  <strong>Localização:</strong>
+  <%= @catalogo.localizacao %>
+</p>
+<p>
+  <strong>Tipo de Aquisição:</strong>
+  <%= @catalogo.tipo_aquisicao %>
+</p>
+<p>
+  <strong>Data da Aquisição:</strong>
+  <%= @catalogo.data_aquisicao %>
+</p>
+<p>
+  <strong>Fornecedor da Aquisição:</strong>
+  <%= @catalogo.fornecedor_aquisicao %>
+</p>
+<h3>ESPECIFICAÇÕES TÉCNICAS</h3>
+<p>
+  <strong>Tamanho:</strong>
+  <%= Tamanho.find(@catalogo.tamanho_id).nome %>
+</p>
+<p>
+  <strong>Tipos de Materiais:</strong>
+  <% @catalogo.tipo_materials.each do |i| %>
+  <%= i.nome %>
+  <% end %>
+</p>
+<h3>INFORMAÇÕES ADICIONAIS</h3>
+<p>
+  <strong>Fabricante:</strong>
+  <%= @catalogo.fabricante.nome %><br \>
+  <strong>Cidade:</strong>
+  <%= @catalogo.fabricante.cidade %><br \>
+  <strong>Estado:</strong>
+  <%= @catalogo.fabricante.estado %><br \>
+  <strong>País:</strong>
+  <%= @catalogo.fabricante.pais %><br \>
+  <strong>Endereço:</strong>
+  <%= @catalogo.fabricante.endereco %><br \>
+  <strong>Site:</strong>
+  <%= @catalogo.fabricante.site %><br \>
+  <strong>E-mail:</strong>
+  <%= @catalogo.fabricante.email %><br \>
+</p>
+<p>
+  <strong>Coleção:</strong>
+  <%= @catalogo.colecao.nome %>
+</p>
+<p>
+  <strong>Ano da Coleção:</strong>
+  <%= @catalogo.ano_colecao %>
+</p>
+<p>
+  <strong>Especificações:</strong>
+  <%= @catalogo.especificacoes %>
+</p>
+<p>
+  <strong>Faixa Etária:</strong>
+  <%= @catalogo.faixa_etaria.nome %><br \>
+</p>
+<p>
+  <strong>Peça Vestuário:</strong>
+  <%= @catalogo.peca_vestuario %>
+</p>
+
+<%= link_to 'Editar', edit_catalogo_path(@catalogo) %> |
+<%= link_to 'Voltar', catalogos_path %>

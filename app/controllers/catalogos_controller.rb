@@ -5,8 +5,18 @@ class CatalogosController < ApplicationController
   # GET /catalogos
   # GET /catalogos.json
   def index
-    @catalogo = Item.new
-    @catalogos = Item.where("suporte_id=1 "+@catalogo.buildConditions(params))
+	cond = Item.buildConditions(params)
+	if !params[:item].nil? && !params[:item][:materia_prima_ids].nil? && params[:item][:materia_prima_ids].count>1
+      @catalogos = Item.joins(:item_materia_primas).where("suporte_id=2 " + cond).group(:id)
+    else
+      @catalogos = Item.where("suporte_id=1 " + cond)
+	end
+
+	if params[:item].nil?
+		@catalogo = Item.new
+	else
+		@catalogo = Item.new(catalogo_params)
+	end	
   end
 
   # GET /catalogos/1
