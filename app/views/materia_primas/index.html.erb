@@ -13,7 +13,6 @@
         <td><%= materia_prima.nome %></td>
         <td><%= link_to 'Mostrar', materia_prima_path(materia_prima) %></td>
         <td><%= link_to 'Editar', edit_materia_prima_path(materia_prima) %></td>
-        <td><%= link_to 'Excluir', materia_prima_path(materia_prima), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

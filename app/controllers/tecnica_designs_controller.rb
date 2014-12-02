@@ -28,7 +28,7 @@ class TecnicaDesignsController < ApplicationController
     @tecnica_design = TecnicaDesign.new(tecnica_design_params)
 
     respond_to do |format|
-      if @tecnica_design.sav
+      if @tecnica_design.save
         format.html { redirect_to tecnica_design_path(@tecnica_design), notice: 'Materia prima criada com sucesso.' }
         format.json { render :show, status: :created, location: @tecnica_design }
       else

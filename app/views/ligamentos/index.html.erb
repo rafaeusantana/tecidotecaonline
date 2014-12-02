@@ -13,7 +13,6 @@
         <td><%= ligamento.tipo %></td>
         <td><%= link_to 'Mostrar', ligamento_path(ligamento) %></td>
         <td><%= link_to 'Editar', edit_ligamento_path(ligamento) %></td>
-        <td><%= link_to 'Excluir', ligamento_path(ligamento), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

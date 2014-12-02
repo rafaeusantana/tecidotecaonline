@@ -13,7 +13,6 @@
         <td><%= faixa_etaria.nome %></td>
         <td><%= link_to 'Mostrar', faixa_etaria_path(faixa_etaria) %></td>
         <td><%= link_to 'Editar', edit_faixa_etaria_path(faixa_etaria) %></td>
-        <td><%= link_to 'Excluir', faixa_etaria_path(faixa_etaria), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

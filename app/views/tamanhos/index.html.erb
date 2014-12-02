@@ -13,7 +13,6 @@
         <td><%= tamanho.nome %></td>
         <td><%= link_to 'Mostrar', tamanho_path(tamanho) %></td>
         <td><%= link_to 'Editar', edit_tamanho_path(tamanho) %></td>
-        <td><%= link_to 'Excluir', tamanho_path(tamanho), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -13,7 +13,6 @@
         <td><%= colecao.nome %></td>
         <td><%= link_to 'Mostrar', colecao_path(colecao) %></td>
         <td><%= link_to 'Editar', edit_colecao_path(colecao) %></td>
-		<td><%= link_to 'Excluir', colecao_path(colecao), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -13,7 +13,6 @@
         <td><%= cor.nome %></td>
         <td><%= link_to 'Mostrar', cor_path(cor) %></td>
         <td><%= link_to 'Editar', edit_cor_path(cor) %></td>
-        <td><%= link_to 'Excluir', cor_path(cor), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

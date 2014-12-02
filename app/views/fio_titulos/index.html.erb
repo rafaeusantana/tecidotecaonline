@@ -13,7 +13,6 @@
         <td><%= fio_titulo.tipo %></td>
         <td><%= link_to 'Mostrar', fio_titulo_path(fio_titulo) %></td>
         <td><%= link_to 'Editar', edit_fio_titulo_path(fio_titulo) %></td>
-        <td><%= link_to 'Excluir', fio_titulo_path(fio_titulo), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

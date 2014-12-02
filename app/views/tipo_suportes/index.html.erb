@@ -13,7 +13,6 @@
         <td><%= tipo_suporte.nome %></td>
         <td><%= link_to 'Mostrar', tipo_suporte_path(tipo_suporte) %></td>
         <td><%= link_to 'Editar', edit_tipo_suporte_path(tipo_suporte) %></td>
-        <td><%= link_to 'Excluir', tipo_suporte_path(tipo_suporte), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

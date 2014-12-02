@@ -13,7 +13,6 @@
         <td><%= fabricante.nome %></td>
         <td><%= link_to 'Mostrar', fabricante_path(fabricante) %></td>
         <td><%= link_to 'Editar', edit_fabricante_path(fabricante) %></td>
-        <td><%= link_to 'Excluir', fabricante_path(fabricante), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

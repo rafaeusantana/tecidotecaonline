@@ -1,19 +1,18 @@
-<h1>Lista de Tipos de Tecnica Design</h1>
+<h1>Lista de Técnica Design</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Tipo de Tecnica Design</th>
+      <th>Técnica Design</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tipo_tecnica_designs.each do |tipo_tecnica_design| %>
+    <% @tecnica_designs.each do |tecnica_design| %>
       <tr>
-        <td><%= tipo_tecnica_design.nome %></td>
-        <td><%= link_to 'Mostrar', tipo_tecnica_design_path(tipo_tecnica_design) %></td>
-        <td><%= link_to 'Editar', edit_tipo_tecnica_design_path(tipo_tecnica_design) %></td>
-        <td><%= link_to 'Excluir', tipo_tecnica_design_path(tipo_tecnica_design), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= tecnica_design.nome %></td>
+        <td><%= link_to 'Mostrar', tecnica_design_path(tecnica_design) %></td>
+        <td><%= link_to 'Editar', edit_tecnica_design_path(tecnica_design) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,4 +20,4 @@
 
 <br>
 
-<%= link_to 'Adicionar tipo de matéria prima', new_tipo_tecnica_design_path %>
+<%= link_to 'Adicionar técnica design', new_tecnica_design_path %>

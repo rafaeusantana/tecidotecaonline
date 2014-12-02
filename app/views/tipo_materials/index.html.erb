@@ -13,7 +13,6 @@
         <td><%= tipo_material.nome %></td>
         <td><%= link_to 'Mostrar', tipo_material_path(tipo_material) %></td>
         <td><%= link_to 'Editar', edit_tipo_material_path(tipo_material) %></td>
-        <td><%= link_to 'Excluir', tipo_material_path(tipo_material), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -27,6 +27,6 @@
 </div>
 </div>
   <div class="actions">
-    <%= f.submit :class=>"btn btn-primary", :value=>"Inserir" %>
+    <%= f.submit :class=>"btn btn-primary", :value=>(@tipo_item_variado.id.nil?) ? "Adicionar" : "Atualizar" %>
   </div>
 <% end %>

@@ -13,7 +13,6 @@
         <td><%= textura.tipo %></td>
         <td><%= link_to 'Mostrar', textura_path(textura) %></td>
         <td><%= link_to 'Editar', edit_textura_path(textura) %></td>
-        <td><%= link_to 'Excluir', textura_path(textura), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

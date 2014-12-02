@@ -24,33 +24,33 @@
 	    <%= f.text_field :nome, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :estado %> *
+	    <%= f.label :estado %>
 	    <%= f.text_field :estado, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :cidade %> *
+	    <%= f.label :cidade %>
 	    <%= f.text_field :cidade, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :endereço %> *
+	    <%= f.label :endereço %>
 	    <%= f.text_field :endereco, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :país %> *
+	    <%= f.label :país %>
 	    <%= f.text_field :pais, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :site %> *
+	    <%= f.label :site %>
 	    <%= f.text_field :site, :class=>"form-control input-sm" %>
 	  </div>
 	  <div class="form-group">
-	    <%= f.label :Email %> *
+	    <%= f.label :Email %>
 	    <%= f.text_field :email, :class=>"form-control input-sm" %>
 	  </div>
   </div>
 </div>
 </div>
   <div class="actions">
-    <%= f.submit :class=>"btn btn-primary", :value=>"Inserir" %>
+    <%= f.submit :class=>"btn btn-primary", :value=>(@fabricante.id.nil?) ? "Adicionar" : "Atualizar" %>
   </div>
 <% end %>
