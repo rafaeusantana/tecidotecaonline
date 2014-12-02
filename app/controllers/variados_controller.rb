@@ -5,7 +5,17 @@ class VariadosController < ApplicationController
   # GET /variados
   # GET /variados.json
   def index
-    @variados = Item.where(:suporte_id=>3)
+	@variados = Item.selecionarItens(params, "3")
+
+	if params[:item].nil?
+		@variado = Item.new
+	else
+		@variado = Item.new(variado_params)
+	end	
+	  respond_to do |format|
+	    format.html
+	    format.csv {send_data @variados.to_csv}
+	  end
   end
 
   # GET /variados/1

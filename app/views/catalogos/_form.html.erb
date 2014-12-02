@@ -66,6 +66,10 @@
 	    <%= f.select :colecao_id, Colecao.all.map{|c| [c.nome, c.id]}, {}, {:class=>"form-control"} %>
 	  </div>
 	  <div class="form-group">
+	    <%= f.label :ano_da_coleção %>
+	    <%= f.text_field :ano_colecao, :class=>"form-control input-sm" %>
+	  </div>
+	  <div class="form-group">
 	    <%= f.label :especificações %>
 	    <%= f.text_field :especificacoes, :class=>"form-control input-sm" %>
 	  </div>
@@ -81,6 +85,6 @@
 </div>
 </div>
   <div class="actions">
-    <%= f.submit :class=>"btn btn-primary", :value=>"Atualizar" %>
+    <%= f.submit :class=>"btn btn-primary", :value=>(@catalogo.id.nil?) ? "Adicionar" : "Atualizar" %>
   </div>
 <% end %>

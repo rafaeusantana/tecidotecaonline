@@ -28,7 +28,14 @@ class Item < ActiveRecord::Base
   has_many :tecnica_designs, :through => :item_tecnica_designs
 
   @@joinAttributes = {
-"materia_prima_ids"=>["item_materia_primas","item_materia_prima","materia_prima_id"],"ligamento_ids"=>["item_ligamentos","item_ligamento","ligamento_id"],"fio_titulo_ids"=>["item_fio_titulos","item_fio_titulo","fio_titulo_id"],"padronagem_design_ids"=>["item_padronagem_designs","item_padronagem_design","padronagem_design_id"],"uso_tecido_ids"=>["item_uso_tecidos","item_uso_tecido","uso_tecido_id"],"tecnica_design_ids"=>["item_tecnica_designs","item_tecnica_design","tecnica_design_id"]
+"tipo_material_ids"=>["item_tipo_materials","item_tipo_material","tipo_material_id"],
+"materia_prima_ids"=>["item_materia_primas","item_materia_prima","materia_prima_id"],
+"ligamento_ids"=>["item_ligamentos","item_ligamento","ligamento_id"],
+"fio_titulo_ids"=>["item_fio_titulos","item_fio_titulo","fio_titulo_id"],
+"padronagem_design_ids"=>["item_padronagem_designs","item_padronagem_design","padronagem_design_id"],
+"uso_tecido_ids"=>["item_uso_tecidos","item_uso_tecido","uso_tecido_id"],
+"cor_adicional_ids"=>["item_cor_adicionals","item_cor_adicional","cor_adicional_id"],
+"tecnica_design_ids"=>["item_tecnica_designs","item_tecnica_design","tecnica_design_id"]
 }
 
   def self.selecionarItens(params, type)
@@ -58,9 +65,9 @@ class Item < ActiveRecord::Base
 	end
 	params[:item].each do |i|
 	
-	  if["localizacao","tipo_aquisicao","especificacoes","analise_cor"].include?(i[0]) 		
+	  if["localizacao","tipo_aquisicao","especificacoes","peca_vestuario","analise_cor"].include?(i[0]) 		
 	    conditions += likeCondition(i[0], params[:item][i[0]])
-          elsif["tipo_bandeira_id","fabricante_id","colecao_id","cor_id","acabamento_id","textura_id"].include?(i[0])
+          elsif["tipo_bandeira_id","tipo_item_variado_id","fabricante_id","tamanho_id","colecao_id","cor_id","acabamento_id","textura_id","faixa_etaria_id"].include?(i[0])
 	    conditions += exactCondition(i[0], params[:item][i[0]])
           elsif !@@joinAttributes[i[0]].nil?
 	    conditions += inCondition(@@joinAttributes[i[0]][1]+"."+@@joinAttributes[i[0]][2], params[:item][i[0]])

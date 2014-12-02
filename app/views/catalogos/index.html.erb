@@ -1,13 +1,107 @@
-<h1>Lista de Catálogos</h1>
+<script>
+	habilitarCampo = function(id) {
+		campo = document.getElementById(id);
+		campo.parentElement.className = campo.parentElement.className.replace("first-invisible", "");
+	}
+	closeSearchField = function(f){
+		parent = f.parentElement.parentElement
+		parent.className += " first-invisible";
+		for(i=0;i<parent.childNodes.length;i++){
+		  if(typeof parent.childNodes[i].value !== "undefined") parent.childNodes[i].value="";
+		  if(typeof parent.childNodes[i].options !== "undefined"){
+			for(j=0;j<parent.childNodes[i].options.length;j++){
+				parent.childNodes[i].options[j].selected=false;
+			}
+		  }
+		}
+	}
+</script>
+
+
+<h1>Catálogos</h1>
+
+Filtrar por: 
+<%= select_tag(:filtrar_por, options_for_select([['Selecione um campo',0], ['Tipo de Aquisição','item_tipo_aquisicao'],  ['Tamanho','item_tamanho_id'], ['Tipo de Matéria Prima','tipo_material_ids'], ['Fabricante','item_fabricante_id'],['Coleção','item_colecao_id'], ['Ano da coleção', 'item_ano_colecao'], ['Especificações', 'item_especificacoes'], ['Faixa etária','item_faixa_etaria_id'], ['Peça vestuário','item_peca_vestuario']]),  :onchange => 'habilitarCampo(this.value)') %>
+
+<%= form_for(@catalogo, :url => { :controller => "catalogos" }, :html => { :method => 'GET' }) do |f| %>
+<br />
+
+	  <div class="form-group search-field <%=show_search_field?(:item, :ano_colecao) ? '':'first-invisible'%>">
+	    <%= f.label :ano_da_coleção %>
+	    <%= f.text_field :ano_colecao, :class=>"form-control input-sm" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	  <div class="form-group search-field <%=show_search_field?(:item, :especificacoes) ? '':'first-invisible'%>">
+	    <%= f.label :especificações %>
+	    <%= f.text_field :especificacoes, :class=>"form-control input-sm" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	  <div class="form-group search-field <%=show_search_field?(:item, :tipo_aquisicao) ? '':'first-invisible'%>">
+	    <%= f.label :tipo_de_aquisição %>
+	    <%= f.text_field :tipo_aquisicao, :class=>"form-control input-sm" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	  <div class="form-group search-field <%=show_search_field?(:item, :peca_vestuario) ? '':'first-invisible'%>">
+	    <%= f.label :peça_vestuário %>
+	    <%= f.text_field :peca_vestuario, :class=>"form-control input-sm" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+<br />
+
+	<div class="form-group search-field  <%=show_search_field?(:item, :colecao_id) ? '':'first-invisible'%>">
+	    <%= f.label :coleção %>
+	    <%= f.select :colecao_id, (Colecao.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	<div class="form-group search-field  <%=show_search_field?(:item, :fabricante_id) ? '':'first-invisible'%>">
+	    <%= f.label :fabricante %>
+	    <%= f.select :fabricante_id, (Fabricante.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	<div class="form-group search-field  <%=show_search_field?(:item, :tamanho_id) ? '':'first-invisible'%>">
+	    <%= f.label :tamanho %>
+	    <%= f.select :tamanho_id, (Tamanho.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+<br />
+
+	<div class="form-group search-field  <%=show_search_field?(:item, :faixa_etaria_id) ? '':'first-invisible'%>">
+	    <%= f.label :faixa_etária %>
+	    <%= f.select :faixa_etaria_id, (FaixaEtaria.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+	  <div class="form-group search-field <%=show_search_field?(:item, :tipo_material_ids) ? '':'first-invisible'%>">
+	    <%= f.label :tipo_de_material %>
+	    <%= f.select :tipo_material_ids, TipoMaterial.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm", :id=>'tipo_material_ids' %>
+	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+<br />
+<div class="actions">
+    <%= f.submit :class=>"btn btn-primary", :value=>"Buscar" %>
+</div>
+<% end %>
+
+<hr />
+<h2>Resultado da busca</h2>
+
+<div class="search-result-header">Exportação: <%= link_to "CSV", catalogos_path(format: "csv") %></div>
+
+<br />
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Suporte</th>
       <th>Localização</th>
-      <th>Nome da Aquisição</th>
-      <th>Data de Aquisição</th>
       <th>Fabricante</th>
       <th colspan="8"></th>
     </tr>
@@ -16,11 +110,8 @@
   <tbody>
     <% @catalogos.each do |catalogo| %>
       <tr>
-        <td><%= catalogo.id %></td>
         <td><%= Suporte.find(catalogo.suporte_id).nome %></td>
         <td><%= catalogo.localizacao %></td>
-        <td><%= catalogo.tipo_aquisicao %></td>
-        <td><%= catalogo.data_aquisicao %></td>
         <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
         <td><%= link_to 'Mostrar', catalogo_path(catalogo) %></td>
         <td><%= link_to 'Editar', edit_catalogo_path(catalogo) %></td>
