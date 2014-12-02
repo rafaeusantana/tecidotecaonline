@@ -14,6 +14,23 @@
  *= require_self
  */
 
+br{
+  clear:both;
+}
+
 .first-invisible{
   display:none;
+}
+
+.search-result-header{
+  text-align:right;
+}
+
+.search-field{
+  float:left;
+  padding:5px;
+}
+
+.close-search-field{
+  cursor:pointer;
 }
