@@ -21,67 +21,69 @@
 <h1>Catálogos</h1>
 
 Filtrar por: 
-<%= select_tag(:filtrar_por, options_for_select([['Selecione um campo',0], ['Tipo de Aquisição','item_tipo_aquisicao'],  ['Tamanho','item_tamanho_id'], ['Tipo de Matéria Prima','tipo_material_ids'], ['Fabricante','item_fabricante_id'],['Coleção','item_colecao_id'], ['Ano da coleção', 'item_ano_colecao'], ['Especificações', 'item_especificacoes'], ['Faixa etária','item_faixa_etaria_id'], ['Peça vestuário','item_peca_vestuario']]),  :onchange => 'habilitarCampo(this.value)') %>
+<%= select_tag(:filtrar_por, options_for_select([['Selecione um campo',0],['Ano da coleção', 'item_ano_colecao'], ['Coleção','item_colecao_id'], ['Especificações', 'item_especificacoes'], ['Fabricante','item_fabricante_id'], ['Faixa etária','item_faixa_etaria_id'], ['Peça vestuário','item_peca_vestuario'], ['Tamanho','item_tamanho_id'], ['Tipo de aquisição','item_tipo_aquisicao'], ['Tipo de material','tipo_material_ids']]),  :onchange => 'habilitarCampo(this.value)') %>
 
 <%= form_for(@catalogo, :url => { :controller => "catalogos" }, :html => { :method => 'GET' }) do |f| %>
 <br />
 
-	  <div class="form-group search-field <%=show_search_field?(:item, :ano_colecao) ? '':'first-invisible'%>">
+	  <div class="form-group search-field tam-search <%=show_search_field?(:item, :ano_colecao) ? '':'first-invisible'%>">
 	    <%= f.label :ano_da_coleção %>
-	    <%= f.text_field :ano_colecao, :class=>"form-control input-sm" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.text_field :ano_colecao, :class=>"form-control tam-field input-sm" %>
+	    <div class="h-img-txt"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
-	  <div class="form-group search-field <%=show_search_field?(:item, :especificacoes) ? '':'first-invisible'%>">
+	  <div class="form-group search-field tam-search <%=show_search_field?(:item, :especificacoes) ? '':'first-invisible'%>">
 	    <%= f.label :especificações %>
-	    <%= f.text_field :especificacoes, :class=>"form-control input-sm" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.text_field :especificacoes, :class=>"form-control tam-field input-sm" %>
+	    <div class="h-img-txt"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
-	  <div class="form-group search-field <%=show_search_field?(:item, :tipo_aquisicao) ? '':'first-invisible'%>">
+	  <div class="form-group search-field tam-search <%=show_search_field?(:item, :tipo_aquisicao) ? '':'first-invisible'%>">
 	    <%= f.label :tipo_de_aquisição %>
-	    <%= f.text_field :tipo_aquisicao, :class=>"form-control input-sm" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.text_field :tipo_aquisicao, :class=>"form-control tam-field input-sm" %>
+	    <div class="h-img-txt"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
-	  <div class="form-group search-field <%=show_search_field?(:item, :peca_vestuario) ? '':'first-invisible'%>">
+	  <div class="form-group search-field tam-search <%=show_search_field?(:item, :peca_vestuario) ? '':'first-invisible'%>">
 	    <%= f.label :peça_vestuário %>
-	    <%= f.text_field :peca_vestuario, :class=>"form-control input-sm" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.text_field :peca_vestuario, :class=>"form-control tam-field input-sm" %>
+	    <div class="h-img-txt"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
 <br />
 
-	<div class="form-group search-field  <%=show_search_field?(:item, :colecao_id) ? '':'first-invisible'%>">
+	<div class="form-group search-field tam-search <%=show_search_field?(:item, :colecao_id) ? '':'first-invisible'%>">
 	    <%= f.label :coleção %>
-	    <%= f.select :colecao_id, (Colecao.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.select :colecao_id, (Colecao.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control tam-field" %>
+	    <div class="h-img-select"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
-	<div class="form-group search-field  <%=show_search_field?(:item, :fabricante_id) ? '':'first-invisible'%>">
+	<div class="form-group search-field tam-search <%=show_search_field?(:item, :fabricante_id) ? '':'first-invisible'%>">
 	    <%= f.label :fabricante %>
-	    <%= f.select :fabricante_id, (Fabricante.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.select :fabricante_id, (Fabricante.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control tam-field" %>
+	    <div class="h-img-select"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
-	<div class="form-group search-field  <%=show_search_field?(:item, :tamanho_id) ? '':'first-invisible'%>">
-	    <%= f.label :tamanho %>
-	    <%= f.select :tamanho_id, (Tamanho.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	<div class="form-group search-field tam-search <%=show_search_field?(:item, :faixa_etaria_id) ? '':'first-invisible'%>">
+	    <%= f.label :faixa_etária %>
+	    <%= f.select :faixa_etaria_id, (FaixaEtaria.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control tam-field" %>
+	    <div class="h-img-select"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
+
+	<div class="form-group search-field tam-search <%=show_search_field?(:item, :tamanho_id) ? '':'first-invisible'%>">
+	    <%= f.label :tamanho %>
+	    <%= f.select :tamanho_id, (Tamanho.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control tam-field" %>
+	    <div class="h-img-select"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	  </div>
+
+
 
 <br />
 
-	<div class="form-group search-field  <%=show_search_field?(:item, :faixa_etaria_id) ? '':'first-invisible'%>">
-	    <%= f.label :faixa_etária %>
-	    <%= f.select :faixa_etaria_id, (FaixaEtaria.all.map{|c| [c.nome, c.id]} << ["- Selecione", nil]).sort, {}, :class=>"form-control" %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
-	  </div>
-
-	  <div class="form-group search-field <%=show_search_field?(:item, :tipo_material_ids) ? '':'first-invisible'%>">
+	  <div class="form-group search-field tam-search <%=show_search_field?(:item, :tipo_material_ids) ? '':'first-invisible'%>">
 	    <%= f.label :tipo_de_material %>
-	    <%= f.select :tipo_material_ids, TipoMaterial.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control input-sm", :id=>'tipo_material_ids' %>
-	    <div><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
+	    <%= f.select :tipo_material_ids, TipoMaterial.all.collect {|x| [x.nome, x.id]}, {}, :multiple => true, :class=>"form-control tam-field input-sm", :id=>'tipo_material_ids' %>
+	    <div class="h-img-multiselect"><img src="assets/close.png" onclick="closeSearchField(this)" class="close-search-field"/></div>
 	  </div>
 
 <br />

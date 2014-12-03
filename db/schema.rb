@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(version: 20141112032116) do
     t.string "tipo", limit: 50, null: false
   end
 
-  create_table "catalogo_tipo_material", id: false, force: true do |t|
-    t.integer "catalogo_id",      null: false
-    t.integer "tipo_material_id", null: false
-  end
-
   create_table "colecao", force: true do |t|
     t.string "nome", limit: 100, null: false
   end
@@ -79,29 +74,9 @@ ActiveRecord::Schema.define(version: 20141112032116) do
     t.integer "tipo_item_variado_id"
   end
 
-  create_table "item_acabamento", id: false, force: true do |t|
-    t.integer "item_id",       null: false
-    t.integer "acabamento_id", null: false
-  end
-
-  create_table "item_cor", id: false, force: true do |t|
-    t.integer "item_id", null: false
-    t.integer "cor_id",  null: false
-  end
-
   create_table "item_cor_adicional", id: false, force: true do |t|
     t.integer "item_id",          null: false
     t.integer "cor_adicional_id", null: false
-  end
-
-  create_table "item_cor_predominante", id: false, force: true do |t|
-    t.integer "item_id",             null: false
-    t.integer "cor_predominante_id", null: false
-  end
-
-  create_table "item_faixa_etaria", id: false, force: true do |t|
-    t.integer "item_id",         null: false
-    t.integer "faixa_etaria_id", null: false
   end
 
   create_table "item_fio_titulo", id: false, force: true do |t|
@@ -127,11 +102,6 @@ ActiveRecord::Schema.define(version: 20141112032116) do
   create_table "item_tecnica_design", id: false, force: true do |t|
     t.integer "item_id",           null: false
     t.integer "tecnica_design_id", null: false
-  end
-
-  create_table "item_textura", id: false, force: true do |t|
-    t.integer "item_id",    null: false
-    t.integer "textura_id", null: false
   end
 
   create_table "item_tipo_material", id: false, force: true do |t|
@@ -174,10 +144,6 @@ ActiveRecord::Schema.define(version: 20141112032116) do
   end
 
   create_table "textura", force: true do |t|
-    t.string "tipo", limit: 50, null: false
-  end
-
-  create_table "tipo_item", force: true do |t|
     t.string "tipo", limit: 50, null: false
   end
 

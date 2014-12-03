@@ -34,3 +34,28 @@ br{
 .close-search-field{
   cursor:pointer;
 }
+
+.h-img-txt, .h-img-select, .h-img-multiselect {
+  float: left; 
+}
+
+.h-img-txt {
+  margin: 4px;
+}
+
+.h-img-select {
+  margin: 6px 4px;
+}
+
+.h-img-multiselect {
+  margin: 25px 4px;
+}
+
+.form-group > .tam-field {
+  width: 240px;
+  float: left;
+}
+
+.tam-search {
+  width: 280px;
+}

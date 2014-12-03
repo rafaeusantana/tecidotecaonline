@@ -24,9 +24,9 @@ id serial primary key,
 tipo varchar(50) not null
 );
 
-INSERT INTO item_variado(id, tipo) VALUES(1,'Item1');
-INSERT INTO item_variado(id, tipo) VALUES(2,'Item2');
-INSERT INTO item_variado(id, tipo) VALUES(3,'Item3');
+INSERT INTO item_variado(id, tipo) VALUES(1,'DVD');
+INSERT INTO item_variado(id, tipo) VALUES(2,'Linha');
+INSERT INTO item_variado(id, tipo) VALUES(3,'Revista');
 
 DROP TABLE IF EXISTS materia_prima CASCADE; 
 CREATE TABLE materia_prima(
