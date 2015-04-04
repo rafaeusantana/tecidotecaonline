@@ -1,6 +1,0 @@
-<h1>Novo Tamanho</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tamanhos_path %>

@@ -1,6 +1,0 @@
-<h1>Nova Matéria Prima</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', materia_primas_path %>

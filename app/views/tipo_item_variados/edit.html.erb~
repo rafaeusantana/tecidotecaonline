@@ -1,7 +1,0 @@
-<h1>Editar Tipo de Item Variado</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Mostrar', tipo_bandeira_path(@tipo_bandeira) %> |
-<%= link_to 'Voltar', tipo_bandeiras_path %>

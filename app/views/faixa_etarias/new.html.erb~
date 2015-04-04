@@ -1,6 +1,0 @@
-<h1>Nova Faixa Etária</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tipo_faixa_etarias_path %>

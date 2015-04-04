@@ -1,7 +1,0 @@
-<h1>Editar Itens Variados</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Mostrar', outro_path(@outro) %> |
-<%= link_to 'Voltar', outros_path %>

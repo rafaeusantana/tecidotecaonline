@@ -1,6 +1,0 @@
-<h1>Novo Material</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tipo_materials_path %>

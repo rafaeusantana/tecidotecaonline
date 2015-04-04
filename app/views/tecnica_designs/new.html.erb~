@@ -1,6 +1,0 @@
-<h1>Novo Tipo de Tecnica Design</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tipo_tecnica_designs_path %>

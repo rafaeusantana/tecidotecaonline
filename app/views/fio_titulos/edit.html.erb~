@@ -1,7 +1,0 @@
-<h1>Editar Fio Título</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Mostrar', materia_prima_path(@materia_prima) %> |
-<%= link_to 'Voltar', materia_primas_path %>

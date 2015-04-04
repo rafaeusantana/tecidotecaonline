@@ -1,6 +1,0 @@
-<h1>Nova Textura</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tipo_texturas_path %>
