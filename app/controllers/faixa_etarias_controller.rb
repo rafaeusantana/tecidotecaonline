@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FaixaEtariasController < ApplicationController
   before_action :set_faixa_etaria, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]

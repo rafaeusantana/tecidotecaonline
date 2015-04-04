@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CatalogosController < ApplicationController
   before_action :set_catalogo, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]
@@ -5,7 +6,7 @@ class CatalogosController < ApplicationController
   # GET /catalogos
   # GET /catalogos.json
   def index
-	@catalogos = Item.selecionarItens(params, "1")
+	@catalogos = Item.selecionarItens(params, "1").page(params['page']).per(20)
 
 	if params[:item].nil?
 		@catalogo = Item.new

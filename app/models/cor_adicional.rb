@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CorAdicional < ActiveRecord::Base
   self.table_name="cor"
   has_many :item_cor_adicionals

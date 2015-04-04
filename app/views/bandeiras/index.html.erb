@@ -140,9 +140,10 @@ Filtrar por:
 <% end %>
 
 <hr />
+
 <h2>Resultado da busca</h2>
 
-<div class="search-result-header">Exportação: <%= link_to "CSV", bandeiras_path(format: "csv") %></div>
+<!--<div class="search-result-header">Exportação: <%= link_to "CSV", bandeiras_path(format: "csv") %></div>-->
 
 <br />
 
@@ -169,5 +170,8 @@ Filtrar por:
     <% end %>
   </tbody>
 </table>
+<%= paginate @bandeiras %>
+
+<br>
 
 <%= link_to 'Adicionar bandeira', new_bandeira_path %>

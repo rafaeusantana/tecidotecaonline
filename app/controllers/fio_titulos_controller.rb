@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FioTitulosController < ApplicationController
   before_action :set_fio_titulo, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]

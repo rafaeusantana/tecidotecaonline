@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ItemTecnicaDesign < ActiveRecord::Base
   self.table_name="item_tecnica_design"
   belongs_to :item

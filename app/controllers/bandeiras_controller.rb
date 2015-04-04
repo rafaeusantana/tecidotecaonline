@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BandeirasController < ApplicationController
   before_action :set_bandeira, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]
@@ -5,7 +6,7 @@ class BandeirasController < ApplicationController
   # GET /bandeiras
   # GET /bandeiras.json
   def index
-	@bandeiras = Item.selecionarItens(params, "2")
+	@bandeiras = Item.selecionarItens(params, "2").page(params['page']).per(20)
 
 	if params[:item].nil?
 		@bandeira = Item.new

@@ -93,9 +93,10 @@ Filtrar por:
 <% end %>
 
 <hr />
+
 <h2>Resultado da busca</h2>
 
-<div class="search-result-header">Exportação: <%= link_to "CSV", catalogos_path(format: "csv") %></div>
+<!--<div class="search-result-header">Exportação: <%= link_to "CSV", catalogos_path(format: "csv") %></div>-->
 
 <br />
 
@@ -114,7 +115,7 @@ Filtrar por:
       <tr>
         <td><%= Suporte.find(catalogo.suporte_id).nome %></td>
         <td><%= catalogo.localizacao %></td>
-        <td><%= Fabricante.find(catalogo.fabricante_id).nome %></td>
+        <td><%= catalogo.fabricante.nome %></td>
         <td><%= link_to 'Mostrar', catalogo_path(catalogo) %></td>
         <td><%= link_to 'Editar', edit_catalogo_path(catalogo) %></td>
         <td><%= link_to 'Excluir', catalogo_path(catalogo), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
@@ -122,6 +123,7 @@ Filtrar por:
     <% end %>
   </tbody>
 </table>
+<%= paginate @catalogos %>
 
 <br>
 

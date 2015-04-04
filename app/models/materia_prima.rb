@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class MateriaPrima < ActiveRecord::Base
   self.table_name="materia_prima"
   has_many :item_materia_primas

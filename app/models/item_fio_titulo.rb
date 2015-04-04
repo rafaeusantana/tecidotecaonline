@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ItemFioTitulo < ActiveRecord::Base
   self.table_name="item_fio_titulo"
   belongs_to :item

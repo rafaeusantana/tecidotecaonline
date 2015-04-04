@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AcabamentosController < ApplicationController
   before_action :set_acabamento, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]

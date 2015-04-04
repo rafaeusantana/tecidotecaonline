@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ItemMateriaPrima < ActiveRecord::Base
   self.table_name="item_materia_prima"
   belongs_to :item

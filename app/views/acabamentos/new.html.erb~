@@ -1,6 +1,0 @@
-<h1>Novo Tipo de Acabamento</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', tipo_acabamentos_path %>

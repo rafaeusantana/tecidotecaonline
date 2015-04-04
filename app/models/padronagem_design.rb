@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PadronagemDesign < ActiveRecord::Base
   self.table_name="padronagem_design"
   has_many :item_padronagem_designs

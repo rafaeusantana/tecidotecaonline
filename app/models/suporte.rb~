@@ -1,4 +1,0 @@
-class Suporte < ActiveRecord::Base
-  self.table_name="Suporte"
-  belongs_to :catalogo
-end

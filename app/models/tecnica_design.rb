@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TecnicaDesign < ActiveRecord::Base
   self.table_name="tecnica_design"
   has_many :item_tecnica_designs

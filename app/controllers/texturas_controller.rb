@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TexturasController < ApplicationController
   before_action :set_textura, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]

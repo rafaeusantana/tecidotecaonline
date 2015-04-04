@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Item < ActiveRecord::Base
   self.table_name="item"
   belongs_to :suporte
@@ -28,15 +29,15 @@ class Item < ActiveRecord::Base
   has_many :tecnica_designs, :through => :item_tecnica_designs
 
   @@joinAttributes = {
-"tipo_material_ids"=>["item_tipo_materials","item_tipo_material","tipo_material_id"],
-"materia_prima_ids"=>["item_materia_primas","item_materia_prima","materia_prima_id"],
-"ligamento_ids"=>["item_ligamentos","item_ligamento","ligamento_id"],
-"fio_titulo_ids"=>["item_fio_titulos","item_fio_titulo","fio_titulo_id"],
-"padronagem_design_ids"=>["item_padronagem_designs","item_padronagem_design","padronagem_design_id"],
-"uso_tecido_ids"=>["item_uso_tecidos","item_uso_tecido","uso_tecido_id"],
-"cor_adicional_ids"=>["item_cor_adicionals","item_cor_adicional","cor_adicional_id"],
-"tecnica_design_ids"=>["item_tecnica_designs","item_tecnica_design","tecnica_design_id"]
-}
+    "tipo_material_ids"=>["item_tipo_materials","item_tipo_material","tipo_material_id"],
+    "materia_prima_ids"=>["item_materia_primas","item_materia_prima","materia_prima_id"],
+    "ligamento_ids"=>["item_ligamentos","item_ligamento","ligamento_id"],
+    "fio_titulo_ids"=>["item_fio_titulos","item_fio_titulo","fio_titulo_id"],
+    "padronagem_design_ids"=>["item_padronagem_designs","item_padronagem_design","padronagem_design_id"],
+    "uso_tecido_ids"=>["item_uso_tecidos","item_uso_tecido","uso_tecido_id"],
+    "cor_adicional_ids"=>["item_cor_adicionals","item_cor_adicional","cor_adicional_id"],
+    "tecnica_design_ids"=>["item_tecnica_designs","item_tecnica_design","tecnica_design_id"]
+  }
 
   def self.selecionarItens(params, type)
     if params[:item].nil?

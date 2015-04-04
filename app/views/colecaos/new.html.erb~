@@ -1,6 +1,0 @@
-<h1>Novo Tipo de Coleção</h1>
-
-<%= render 'form' %>
-
-<br />
-<%= link_to 'Voltar', colecaos_path %>

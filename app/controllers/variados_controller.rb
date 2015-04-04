@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VariadosController < ApplicationController
   before_action :set_variado, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]
@@ -5,7 +6,7 @@ class VariadosController < ApplicationController
   # GET /variados
   # GET /variados.json
   def index
-	@variados = Item.selecionarItens(params, "3")
+	@variados = Item.selecionarItens(params, "3").page(params['page']).per(20)
 
 	if params[:item].nil?
 		@variado = Item.new

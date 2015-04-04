@@ -1,6 +1,0 @@
-<h1>Editar Catáloga</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', catalogo_path(@catalogo) %> |
-<%= link_to 'Back', catalogos_path %>

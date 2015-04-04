@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TipoItemVariadosController < ApplicationController
   before_action :set_tipo_item_variado, only: [:show, :edit, :update, :destroy]
   before_filter :check_session, :only=>[:new, :edit, :destroy, :update]

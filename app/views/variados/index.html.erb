@@ -167,7 +167,7 @@ Filtrar por:
 
 <h2>Resultado da busca</h2>
 
-<div class="search-result-header">Exportação: <%= link_to "CSV", variados_path(format: "csv") %></div>
+<!--<div class="search-result-header">Exportação: <%= link_to "CSV", variados_path(format: "csv") %></div>-->
 
 <br />
 
@@ -194,6 +194,7 @@ Filtrar por:
     <% end %>
   </tbody>
 </table>
+<%= paginate @variados %>
 
 <br>
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UsoTecido < ActiveRecord::Base
   self.table_name="uso_tecido"
   has_many :item_uso_tecidos
